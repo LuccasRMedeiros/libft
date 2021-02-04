@@ -6,14 +6,15 @@
 /*   By: lrocigno </var/mail/lrocigno>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:19:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/04 09:19:14 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/04 13:04:36 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdio.h"
 #include "string.h"
 
-void    ft_memset(char *s, char c, int n);
+void    *ft_memset(char *s, int c, int n);
+void	ft_bzero(char *s, int n);
 
 int     main()
 {
@@ -106,5 +107,22 @@ int     main()
 		loop1++;
 	}
 	printf("\n\n");
+
+/* ******************************* bzero ************************************ */
+
+	char *destructible0 = "Come back Shane!";
+	printf("          -- ft_bzero --           \n\n");
+	printf("Random kid: -%s\n", destructible0);
+	printf("No Name: -My name's not Shane Kid - *No Name shoots*\n");
+	ft_bzero(destructible0, 15);
+	printf("Random kid: -%s\n", destructible0);
+
+/* ************************************************************************** */
+
+	char *destructible1 = "Capitalism";
+	printf("\n          -- bzero --             \n\n");
+	printf("We are going to destroy %s\n", destructible1);
+	bzero(destructible1, 6);
+	printf("Destruction finished, result: %s\n", destructible1);
 	return (0);
 }
