@@ -5,24 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno </var/mail/lrocigno>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/03 17:23:31 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/03 18:52:36 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/04 09:19:11 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/02/04 09:19:14 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdio.h"
 #include "string.h"
-void	ft_memset(char *s, char c, int n);
 
-int		main()
+void    ft_memset(char *s, char c, int n);
+
+int     main()
 {
 	char balance0[] = "198567245";
 	char balance1[] = "201099183";
-	int nums[3];
+	int nums0[3];
+	int nums1[3];
 
-	nums[0] = 10;
-	nums[1] = 64;
-	nums[2] = 42;
+	nums0[0] = 10;
+	nums0[1] = 64;
+	nums0[2] = 42;
+
+	nums1[0] = 24;
+	nums1[1] = 69;
+	nums1[2] = 13;
 
 	printf("\nVictimim account balance: $%s\n", balance0);
 	printf("Cyber attack initiated\n");
@@ -30,6 +36,36 @@ int		main()
 	printf("====================================\n");
 	printf("Cyber attack successfully completed!\n");
 	printf("Victimim account balance: $%s\n\n", balance0);
+
+/* ***************************** int test *********************************** */
+
+	int loop0;
+
+	loop0 = 0;
+	printf("          -- ft_ memset --          \n\n");
+	printf("I always multiply everything in a\n");
+	printf("test by 0 as the result will always \n"); //limit
+	printf("be equal to 1, so i only need to \n");
+	printf("show the result without making any\n");
+	printf("operation... Maths isn't my strenght\n");
+	printf("====================================\n");
+	printf("Before multiplication: \n");
+	while (loop0 < 3)
+	{
+		printf("-Block %i: %i; ", loop0, nums0[loop0]);
+		loop0++;
+	}
+	printf("\n");
+	memset(nums0, 0, 10);
+	printf("Showing results: \n");
+	
+	loop0 = 0;
+	while (loop0 < 3)
+	{
+		printf("-Block %i: %i; ", loop0, nums0[loop0]);
+		loop0++;
+	}
+	printf("\n\n");
 
 /* ***************************** original *********************************** */
 
@@ -43,10 +79,9 @@ int		main()
 
 /* ***************************** int test *********************************** */
 
-	int loop;
+	int loop1;
 
-	loop = 0;
-
+	loop1 = 0;
 	printf("       -- Original memset --        \n\n");
 	printf("I always multiply everything in a\n");
 	printf("test by 0 as the result will always \n"); //limit
@@ -55,23 +90,21 @@ int		main()
 	printf("operation... Maths isn't my strenght\n");
 	printf("====================================\n");
 	printf("Before multiplication: \n");
-	while(loop < 3)
+	while (loop1 < 3)
 	{
-		printf("-Block %i: %i; ", loop, nums[loop]);
-		loop++;
+		printf("-Block %i: %i; ", loop1, nums1[loop1]);
+		loop1++;
 	}
 	printf("\n");
-	memset(nums, 0, 3);
+	memset(nums1, 0, 10);
 	printf("Showing results: \n");
-	
-	loop = 0;
 
-	while(loop < 3)
+	loop1 = 0;
+	while (loop1 < 3)
 	{
-		printf("-Block %i: %i; ", loop, nums[loop]);
-		loop++;
+		printf("-Block %i: %i; ", loop1, nums1[loop1]);
+		loop1++;
 	}
 	printf("\n\n");
-
 	return (0);
 }
