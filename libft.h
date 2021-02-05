@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 00:42:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/05 14:51:37 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/05 14:13:24 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/02/05 14:48:52 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include <string.h>
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
-{
-	char	*dst_aux;
-	char	*src_aux;
-	int		i;
+void	*ft_memset(void *s, int *c, size_t *n);
 
-	dst_aux = (char*)dst;
-	src_aux = (char*)src;
-	i = 0;
-	while (i < n)
-	{
-		dst_aux[i] = src_aux[i];
-		i++;
-	}
-	dest_aux[n] = '\0';
-	return (dst_aux);
-}
+void	ft_bzero(char *s, size_t n);
+
+void	*ft_memcpy(void *dst, void *src, size_t length);
+
+void	*ft_memccpy(void *dst, void *src, int c, size_t cnt);

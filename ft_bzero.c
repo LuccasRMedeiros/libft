@@ -6,11 +6,13 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:47:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/04 23:56:27 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/05 14:50:06 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(char *s, int n)
+#include "libft.h"
+
+void	ft_bzero(char *s, size_t n)
 {
 	int i;
 

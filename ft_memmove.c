@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 00:42:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/05 14:51:37 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/05 16:24:00 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/02/05 16:59:00 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t length)
 {
 	char	*dst_aux;
 	char	*src_aux;
@@ -21,11 +21,15 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 	dst_aux = (char*)dst;
 	src_aux = (char*)src;
 	i = 0;
-	while (i < n)
+	while (i < length)
 	{
+		if (dst_aux[i])
+		{
+			dst_aux[i] = '\0';
+		}
 		dst_aux[i] = src_aux[i];
 		i++;
 	}
-	dest_aux[n] = '\0';
+	dst_aux[i] = '\0';
 	return (dst_aux);
 }

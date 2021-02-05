@@ -6,11 +6,13 @@
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 14:44:45 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/04 08:56:17 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/05 14:48:16 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, int n)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*aux;
 	char	cc;

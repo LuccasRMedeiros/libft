@@ -17,6 +17,6 @@ int		main()
 	printf("\n                     -- ft_memccpy --\n\n");
 	printf("I don't wanna be an %s\n", phrase1);
 	ft_memccpy(the_sucker, phrase1, ' ', 6);
-	printf("Just %s", the_sucker);
+	printf("Just an %s is fine\n\n", the_sucker);
 	return 0;
 }
