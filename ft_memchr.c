@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/05 14:13:24 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/05 21:30:14 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/05 19:19:20 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/02/05 21:08:39 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memset(void *s, int *c, size_t *n);
+void	*memchr(const void *str, int c, size_t n)
+{
+	char	*str_aux;
+	char	find;
+	int		i;
 
-void	ft_bzero(char *s, size_t n);
-
-void	*ft_memcpy(void *dst, void *src, size_t length);
-
-void	*ft_memccpy(void *dst, void *src, int c, size_t cnt);
-
-void	*ft_memmove(void *dts, const void *src, size_t length);
-
-void	*ft_memchr(void
+	str_aux = (char*)str;
+	find = (char)c;
+	i = 0;
+	while (i < n && str_aux[i] != '\0' && str_aux[i] != find)
+	{
+		i++;
+	}
+	return (str_aux + i);
+}
