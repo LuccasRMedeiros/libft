@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:19:20 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/05 21:08:39 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/09 00:24:36 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,27 @@
 
 void	*memchr(const void *str, int c, size_t n)
 {
-	char	*str_aux;
-	char	find;
-	int		i;
+	unsigned char	*str_aux;
+	size_t			i;
+	int				f;
 
 	str_aux = (char*)str;
 	find = (char)c;
 	i = 0;
-	while (i < n && str_aux[i] != '\0' && str_aux[i] != find)
+	f = 0;
+	while (i++ < n)
 	{
-		i++;
+		if (*str_aux == c)
+		{
+			f = 1;
+		}
 	}
-	return (str_aux + i);
+	if (f)
+	{
+		return (str_aux + i);
+	}
+	else
+	{
+		return (NULL);
+	}
 }
