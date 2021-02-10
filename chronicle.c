@@ -1,4 +1,8 @@
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 void defeat(const char *testspecs, const char *expected, const char *received)
 {
@@ -10,7 +14,7 @@ void defeat(const char *testspecs, const char *expected, const char *received)
 	printf("But received: %s\n", received);
 }
 
-int teststrchr(char *str)
+int teststrchr(const char *str)
 {
 /* This function will take a random char from str to test if ft_strchr behaves
 ** just like the original strchr.
@@ -18,15 +22,16 @@ int teststrchr(char *str)
 ** "fc" variable gonna carry the index of such char.
 ** "to_find" variable will receive the char in "fc" index.
 */
-	int 	str_size;
+	size_t 	str_size;
 	int 	fc;
 	int		t;
 	char	to_find;
 	char	*r_strchr;
 	char	*r_ft_strchr;
 
+	t = 0;
 	srand(time(0)); // initialize the int pseudo-random generation
-	str_size = ft_strlen(str) + 1;
+	str_size = ft_strlen(str);
 	while (t++ <= 5)
 	{
 		fc = rand() % str_size;
@@ -62,9 +67,9 @@ int	main()
 	printf("to this lair of sorrow.\n");
 	printf("What is your name? ");
 	fgets(name, 100, stdin);
-	if (teststrchr)
+	if (teststrchr(name) == 1)
 	{
-		printf("%s will you become a new light or the pure darkness?"\n, name);
+		printf("%s will you become a new light or more darkness?\n", name);
 	}
 	return 0;
 }

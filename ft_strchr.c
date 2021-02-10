@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 10:48:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/09 10:54:56 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/09 21:34:37 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	char	*p;
+	char	*str_aux;
+	int		i;
 
-	while(*str != '\0')
+	str_aux = (char*)str;
+	i = 0;
+	while(str_aux[i] != '\0')
 	{
-		*str++;
-		if (*str == c)
+		i++;
+		if (str_aux[i] == c)
 		{
-			*p = *str;
-			return (p);
+			return (str_aux + i);
 		}
 	}
 	return (NULL);
