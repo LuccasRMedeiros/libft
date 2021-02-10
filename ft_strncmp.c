@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 10:48:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/10 12:57:22 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/10 14:09:16 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/02/10 15:36:21 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	char	*str_aux;
-	int		i;
+	size_t	i;
 
-	str_aux = (char*)str;
 	i = 0;
-	while(str_aux[i] != '\0')
+	while (i < n)
 	{
-		if (str_aux[i] == c)
+		if (str1[i] > str2[i])
 		{
-			return (str_aux + i);
+			return (1);
+		}
+		else if (str1[i] < str2[i])
+		{
+			return (-1);
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
