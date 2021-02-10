@@ -6,11 +6,12 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:13:24 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/10 12:02:51 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:12:22 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <ctype.h>
 
 void	*ft_memset(void *s, int *c, size_t *n);
 void	ft_bzero(char *s, size_t n);
