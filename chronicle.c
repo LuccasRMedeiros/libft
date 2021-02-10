@@ -6,15 +6,17 @@
 
 void defeat(const char *testspecs, const char *expected, const char *received)
 {
+	printf("\033[1;31m");
 	printf("\n             -- Darkness have swallowed everything --             \n");
-   	printf("            But suffering will not last if you keep trying\n");
-	printf("\nHere was were things gone wrong:\n");
+   	printf("          But suffering will not last if you keep trying\n");
+	printf("\033[0m");
+	printf("\nHere was were things gone wrong:\n\n");
 	printf("%s\n", testspecs);
-	printf("Expected result was: %s\n", expected);
-	printf("But received: %s\n", received);
+	printf("Expected result was: \033[1;34m%s\033[0m\n", expected);
+	printf("But received: \033[1;34m%s\033[0m\n", received);
 }
 
-int teststrchr(const char *str)
+int test_ft_strchr(const char *str)
 {
 /* This function will take a random char from str to test if ft_strchr behaves
 ** just like the original strchr.
@@ -51,8 +53,10 @@ int	main()
 {
 	char	name[100];
 
-	printf("\n                  	-- STRCHR --");
-	printf("\n            -- Paralogue - The thin light --\n\n");
+	printf("\033[1;32m");
+	printf("\n                       -- STRCHR --");
+	printf("\n             -- Paralogue - The thin light --\n\n");
+	printf("\033[0m");
 	printf("	In a dark place where souls rest eternally paying for its sins,\n");
 	printf("a thin light have been born, a light that does not carries hope or\n");
 	printf("relief for the sinners, but the bravery to pardon itself, and the\n");
@@ -64,12 +68,12 @@ int	main()
 	printf("made a war break through the dark and so the thin light begone...\n");
 	printf("\n	You, wandering traveller, found this dark place, not because\n");
 	printf("you are a sinner or something, but curiosity opened to you a path\n");
-	printf("to this lair of sorrow.\n");
+	printf("to the Lair of Sorrow.\n");
 	printf("What is your name? ");
 	fgets(name, 100, stdin);
-	if (teststrchr(name) == 1)
+	if (test_ft_strchr(name) == 1)
 	{
-		printf("%s will you become a new light or more darkness?\n", name);
+		printf("%s... will you become a new light or more darkness?\n", name);
 	}
 	return 0;
 }
