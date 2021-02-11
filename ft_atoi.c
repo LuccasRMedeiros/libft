@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/11 08:56:43 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/11 17:13:17 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	f_signal(int c)
 	return (1);
 }
 
-static int calc_amount(long int amount, long int unities, int sig)
+static int	calc_amount(long int amount, long int unities, int sig)
 {
 	amount = (amount - unities) * sig;
 	return (amount);
@@ -41,21 +41,15 @@ int			ft_atoi(const char *str)
 	while (*str != '\0')
 	{
 		if (ft_isdigit(*str))
-		{
 			am *= 10;
 			uh *= 10;
 			am += *str;
 			uh += 48;
-		}
-		else if ((*str == '-' || *str == '+') && flag == 0)
-		{
+		if ((*str == '-' || *str == '+') && flag == 0)
 			sig = f_signal(*str);
 			flag = 1;
-		}
-		else if (!(ft_isdigit(*str)) && (*str != ' ' || flag == 1))
-		{
-			return (calc_amount(am, uh, sig));
-		}
+		if (!(ft_isdigit(*str)) && (*str != ' ' || flag == 1))
+			break ;
 		str++;
 	}
 	return (calc_amount(am, uh, sig));
