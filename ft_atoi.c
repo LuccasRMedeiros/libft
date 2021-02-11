@@ -6,12 +6,11 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/11 00:55:34 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/11 08:56:43 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	f_signal(int c)
 {
@@ -33,10 +32,12 @@ int			ft_atoi(const char *str)
 	long int	am;
 	long int	uh;
 	int			sig;
+	int			flag;
 
 	am = 0;
 	uh = 0;
 	sig = 1;
+	flag = 0;
 	while (*str != '\0')
 	{
 		if (ft_isdigit(*str))
@@ -46,18 +47,16 @@ int			ft_atoi(const char *str)
 			am += *str;
 			uh += 48;
 		}
-		else if (!(check_valid(*str)))
+		else if ((*str == '-' || *str == '+') && flag == 0)
+		{
+			sig = f_signal(*str);
+			flag = 1;
+		}
+		else if (!(ft_isdigit(*str)) && (*str != ' ' || flag == 1))
 		{
 			return (calc_amount(am, uh, sig));
 		}
 		str++;
 	}
 	return (calc_amount(am, uh, sig));
-}
-
-int	main()
-{
-	printf("original: %i\n", atoi("  --90abca"));
-	printf("ft_atoi: %i\n", ft_atoi(" -+90abca"));
-	return 0;
 }
