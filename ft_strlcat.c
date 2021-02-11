@@ -6,29 +6,51 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 09:48:04 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/09 09:54:47 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/11 15:37:31 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-size_t	ft_strlcat(char dst*, const char *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-	int di;
-	int ss;
+	size_t	si;
+	size_t 	di;
+	size_t 	ds;
+	size_t	ss;
 
-	i = 0;
+	si = 0;
 	di = ft_strlen(dst);
+	ds = di;
 	ss = ft_strlen(src);
-	if (n == 0)
+	if (dstsize == 0)
 	{
-		return (NULL);
+		return (ss);
 	}
-	while(i++ < n)
+	else if (dstsize < ds)
 	{
-		dst[di + i] = src[i];
+		return (dstsize + ss);
 	}
-	dst[di + i] = '\0';
-	return (ss);
+	while (src[si] != '\0' && (si + 1 < dstsize))
+	{
+		dst[di] = src[si];
+		di++;
+		si++;
+	}
+	dst[di] = '\0';
+	return(ds + ss);
+}
+
+int	main()
+{
+	char *teste = "xabla";
+	char *teste1 = "blau";
+	char *org = "xabla";
+	char *org1 = "blaublau";
+
+	printf("%zu\n", ft_strlcat(teste, teste1, 5));
+	printf("%zu\n", strlcat(org, org1, 5));
+	return 0;
 }
