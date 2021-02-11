@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:13:24 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/10 16:12:22 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/10 20:37:51 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,9 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
+char	*ft_strnstr(const char *str, const char *sub, size_t n);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
+int		ft_atoi(const char *str);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
