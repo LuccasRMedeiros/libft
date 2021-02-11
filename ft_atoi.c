@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/11 00:27:22 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/11 00:55:34 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,44 +22,42 @@ static int	f_signal(int c)
 	return (1);
 }
 
+static int calc_amount(long int amount, long int unities, int sig)
+{
+	amount = (amount - unities) * sig;
+	return (amount);
+}
+
 int			ft_atoi(const char *str)
 {
 	long int	am;
 	long int	uh;
 	int			sig;
-	int			i;
 
 	am = 0;
 	uh = 0;
 	sig = 1;
-	i = 0;
-	while (str[i] != '\0')
+	while (*str != '\0')
 	{
-		if (ft_isdigit(str[i]))
+		if (ft_isdigit(*str))
 		{
 			am *= 10;
 			uh *= 10;
-			am += str[i];
+			am += *str;
 			uh += 48;
 		}
-		else if (str[i] == '+' || str[i] == '-')
+		else if (!(check_valid(*str)))
 		{
-			sig = f_signal(str[i]);
+			return (calc_amount(am, uh, sig));
 		}
-		else if (!(ft_isdigit(str[i])) && (str[i]!= 32))
-		{
-			am = (am - uh) * sig;
-			return (am);
-		}
-		printf("time \033[1;33m%i\033[0m - amount: \033[1;32m%li\n\033[0m", i, cummulus);
-		i++;
+		str++;
 	}
-	return (0);
+	return (calc_amount(am, uh, sig));
 }
 
 int	main()
 {
-	printf("original: %i\n", atoi("     90abca"));
-	printf("ft_atoi: %i\n", ft_atoi("    90abca"));
+	printf("original: %i\n", atoi("  --90abca"));
+	printf("ft_atoi: %i\n", ft_atoi(" -+90abca"));
 	return 0;
 }
