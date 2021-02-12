@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 13:26:00 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/10 20:33:11 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/11 22:35:18 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *str, const char *sub, size_t n)
 		{
 			index_holder = ih;
 		}
-		while (str[ih] == sub[in])
+		while (str[ih] == sub[in] && ih < n)
 		{
 			ih++;
 			in++;
