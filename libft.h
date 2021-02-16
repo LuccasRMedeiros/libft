@@ -6,11 +6,14 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 14:13:24 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/15 21:01:58 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/16 19:00:11 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <stdlib.h>
 
 void	*ft_memset(void *s, int *c, size_t *n);
 void	ft_bzero(char *s, size_t n);
@@ -35,3 +38,5 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	ft_calloc(size_t n_itens, size_t size);
+
+#endif

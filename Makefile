@@ -1,22 +1,23 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/02/16 16:39:22 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/02/16 19:08:43 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
+NAME	=	libft.a
 
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-DEPS	= libft.h
+CC		=	gcc
+CFLAGS	=	-Wall -Wextra -Werror
+AR 		=	ar rcs
+RM 		=	rm -f
 
-FILES	= ft_memset.c \
+FILES	=	ft_memset.c \
 			ft_bzero.c \
 			ft_memcpy.c \
 			ft_memccpy.c \
@@ -38,5 +39,7 @@ FILES	= ft_memset.c \
 			ft_isprint.c \
 			ft_toupper.c \
 			ft_tolower.c \
+			ft_calloc.c \
+			ft_strdup.c \
 
-OBJ		= $(FILES:%.c=%.o)
+OBJ		=	$(FILES:%.c=%.o)
