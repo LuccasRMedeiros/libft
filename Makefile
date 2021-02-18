@@ -6,15 +6,13 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/02/17 21:33:06 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/02/17 22:10:59 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+CC = gcc -Wall -Wextra -Werror
 
 FILES = ft_memset.c \
 			ft_bzero.c \
@@ -44,6 +42,12 @@ FILES = ft_memset.c \
 OBJS = $(FILES:%.c=%.o)
 
 all: $(NAME)
+
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+$(OBJS): $(FILES)
+	$(CC) $(FILES)
 
 clean: 
 	rm -f $(OBJS)
