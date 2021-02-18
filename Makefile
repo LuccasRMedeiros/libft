@@ -6,18 +6,17 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/02/16 19:08:43 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/02/17 21:33:06 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	libft.a
+NAME = libft.a
 
-CC		=	gcc
-CFLAGS	=	-Wall -Wextra -Werror
-AR 		=	ar rcs
-RM 		=	rm -f
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
 
-FILES	=	ft_memset.c \
+FILES = ft_memset.c \
 			ft_bzero.c \
 			ft_memcpy.c \
 			ft_memccpy.c \
@@ -42,4 +41,16 @@ FILES	=	ft_memset.c \
 			ft_calloc.c \
 			ft_strdup.c \
 
-OBJ		=	$(FILES:%.c=%.o)
+OBJS = $(FILES:%.c=%.o)
+
+all: $(NAME)
+
+clean: 
+	rm -f $(OBJS)
+
+fclean:
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: clean fclean all re
