@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/11 19:42:27 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/18 11:05:54 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int			ft_atoi(const char *str)
 		if (ft_isdigit(*str))
 		{
 			am = (am * 10) + *str;
-			printf("\033[1;31m%li\n\033[0m", am);
 			uh = (uh * 10) + 48;
 		}
 		else if ((*str == '-' || *str == '+') && sig == 0)
