@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 00:52:44 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/18 14:48:05 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/19 13:13:45 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	long int	*aux1;
-	long int	*aux2;
-	size_t		i;
+	unsigned char	*aux1;
+	unsigned char	*aux2;
+	size_t			i;
 
-	aux1 = (long int*)str1;
-	aux2 = (long int*)str2;
+	aux1 = (unsigned char*)str1;
+	aux2 = (unsigned char*)str2;
 	i = 0;
 	while (i < n)
 	{
