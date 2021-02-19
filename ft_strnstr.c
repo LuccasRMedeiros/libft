@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 13:26:00 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/18 15:20:49 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:37:36 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *str, const char *sub, size_t n)
 {
 	size_t	ih;
 	size_t	in;
-	int 	index_holder;
+	int		index_holder;
 
 	ih = 0;
 	in = 0;

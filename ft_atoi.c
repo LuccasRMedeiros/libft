@@ -6,52 +6,56 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/18 11:05:54 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/18 23:44:39 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_isspace(int c)
+{
+	char	*space_list;
+
+	space_list = " \t\r\n\v\f";
+	while (*space_list != '\0')
+	{
+		if (c == *space_list)
+			return (1);
+		space_list++;
+	}
+	return (0);
+}
+
 static int	f_signal(int c)
 {
 	if (c == '-')
-	{
 		return (-1);
-	}
 	return (1);
 }
 
-static int	calc_amount(long int amount, long int unities, int sig)
+static int	calc_amount(long int amount, int sig)
 {
-	amount = (amount - unities);
 	if (sig != 0)
-	{
 		amount *= sig;
-	}
 	return (amount);
 }
 
 int			ft_atoi(const char *str)
 {
 	long int	am;
-	long int	uh;
 	int			sig;
 
 	am = 0;
-	uh = 0;
 	sig = 0;
 	while (*str != '\0')
 	{
 		if (ft_isdigit(*str))
-		{
-			am = (am * 10) + *str;
-			uh = (uh * 10) + 48;
-		}
+			am = (am * 10) + (*str - 48);
 		else if ((*str == '-' || *str == '+') && sig == 0)
 			sig = f_signal(*str);
-		else if (am > 0 || sig != 0)
+		else if (am > 0 || sig != 0 || !(ft_isspace(*str)))
 			break ;
 		str++;
 	}
-	return (calc_amount(am, uh, sig));
+	return (calc_amount(am, sig));
 }

@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 00:42:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/11 19:44:25 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/18 20:40:06 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	{
 		*dst_aux++ = *src_aux++;
 	}
-	return (dst_aux);
+	return (dst);
 }
