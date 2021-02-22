@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 09:10:51 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/21 02:33:27 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/22 12:29:15 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t cnt)
 	{
 		dst_aux[i] = src_aux[i];
 		if (dst_aux[i] == f_char)
-			break ;
+			return (dst + i + 1);
 		i++;
 	}
-	return (dst);
+	return (NULL);
 }
