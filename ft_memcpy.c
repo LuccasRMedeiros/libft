@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 00:42:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/22 15:51:07 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/23 11:12:09 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,17 @@ void	*ft_memcpy(void *dst, const void *src, size_t cnt)
 		i++;
 	}
 	return (dst);
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	void	*ptr1;
+
+	ptr1 = malloc(30);
+	printf("ptr1 address: \033[1;33m%p\n\033[0m", ptr1);
+	printf("Returning address: \033[1;33m%p\n\033[0m", ft_memcpy(ptr1, "abcdef", 6));
+	free(ptr1);
+	return 0;
 }
