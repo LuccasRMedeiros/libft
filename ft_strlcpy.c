@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 09:25:05 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/15 21:10:54 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:29:20 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	ss = ft_strlen(src);
-	while (src[i] != '\0' && i < size)
+	if (size <= 0)
+		return (ss);
+	while (i <= ss && i < size - 1)
 	{
 		dst[i] = src[i];
 		i++;

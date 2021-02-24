@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 10:46:59 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/10 12:57:41 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/24 11:09:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	char	*str_aux;
-	char	*holder;
-	int		i;
+	unsigned char	*str_aux;
+	unsigned char	find;
+	int				i;
 
-	str_aux = (char*)str;
-	holder = NULL;
-	i = 0;
-	while (str[i] != '\0')
+	str_aux = (unsigned char*)str;
+	find = (unsigned char)c;
+	i = ft_strlen(str);
+	while (i >= 0)
 	{
-		if (str[i] == c)
+		if (str[i] == find)
 		{
-			holder = str_aux + i;
+			return ((char*)str + i);
 		}
-		i++;
+		i--;
 	}
-	return (holder);
+	return (NULL);
 }
