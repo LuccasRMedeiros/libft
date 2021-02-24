@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 19:56:13 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/19 01:36:05 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/24 19:24:43 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *str)
 
 	str_size = ft_strlen(str);
 	ret = (char*)malloc(str_size * sizeof(char));
+	if (!ret)
+		return (NULL);
 	ft_strlcpy(ret, str, str_size);
 	return (ret);
 }
