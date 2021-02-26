@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/26 12:17:02 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/26 12:13:45 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/02/26 12:16:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *str, char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	return (NULL);
 }
