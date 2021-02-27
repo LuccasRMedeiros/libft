@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/26 11:48:57 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/26 16:40:13 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char		*ft_itoa(int n)
 	if (n < 0)
 	{
 		itoa[i] = '-';
-		n *= 1;
+		n *= -1;
 		i++;
 	}
 	du = ft_powerten(n);
