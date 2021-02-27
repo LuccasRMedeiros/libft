@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:52:37 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/25 11:18:53 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/26 23:40:43 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		stti++;
 		subi++;
 	}
+	sub[subi] = '\0';
 	return (sub);
 }

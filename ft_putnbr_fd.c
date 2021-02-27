@@ -6,12 +6,11 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:07:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/26 16:42:06 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/26 23:31:27 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int  ft_intlen(int n)
 {

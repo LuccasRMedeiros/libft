@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/26 22:47:42 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/26 23:06:46 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	count_strs(char const *str, char c)
 	size_t cnt;
 
 	cnt = 0;
+	i = 0;
 	while (str[i] != '\0')
 	{
 		if (str[cnt] == c)
@@ -68,10 +69,9 @@ char		**ft_split(char const *str, char c)
 		return (NULL);
 	while (i < n_strs)
 	{
-		*split[i] = ft_dstrcpy(str, c);
+		*split[i] = *ft_dstrcpy(str, c);
 		str = ft_strchr(str, c);
 		i++;
 	}
-	*split[i] = NULL;
 	return (split);
 }
