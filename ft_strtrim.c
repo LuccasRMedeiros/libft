@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 22:10:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/01 00:36:02 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/01 01:51:44 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static size_t	set_start(char const *s1, char const *set)
 	{
 		many++;
 	}
-	return (many);	
+	return (many);
 }
 
 static size_t	set_end(char const *s1, char const *set)
@@ -49,7 +49,7 @@ static size_t	set_end(char const *s1, char const *set)
 	{
 		s1_len--;
 	}
-	return (s1_len);	
+	return (s1_len);
 }
 
 char			*ft_strtrim(char const *s1, char const *set)
