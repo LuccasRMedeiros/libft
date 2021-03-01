@@ -6,11 +6,24 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/26 23:06:46 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/01 01:46:00 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_error(char **split, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i <= len)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
 
 static int	count_strs(char const *str, char c)
 {
@@ -21,14 +34,14 @@ static int	count_strs(char const *str, char c)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[cnt] == c)
+		if (str[i] == c)
 			cnt++;
 		i++;
 	}
 	return (cnt + 1);
 }
 
-static char	*ft_dstrcpy(char const *src, char c)
+static char	*ft_strldup(char const *src, char c)
 {
 	int		cnt;
 	int		i;
@@ -69,9 +82,15 @@ char		**ft_split(char const *str, char c)
 		return (NULL);
 	while (i < n_strs)
 	{
-		*split[i] = *ft_dstrcpy(str, c);
-		str = ft_strchr(str, c);
+		split[i] = ft_strldup(str, c);
+		if (!(*split[i]))
+		{
+			ft_error(split, i);
+			return (NULL);
+		}
+		str = ft_strchr(str, c) + 1;
 		i++;
 	}
+	split[i] = NULL;
 	return (split);
 }
