@@ -6,36 +6,66 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 22:10:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/28 02:19:37 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/02/28 23:22:06 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	set_start_end(char const *s1, char const *set)
+static int		ft_haschar(const char *str, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+static size_t	set_start(char const *s1, char const *set)
+{
+	size_t	many;
+
+	many = 0;
+	while (ft_haschar(set, s1[many]))
+	{
+		many++;
+	}
+	return (many);	
+}
+
+static size_t	set_end(char const *s1, char const *set)
 {
 	size_t	s1_len;
-	size_t	set_len;
 
-	s1_len = ft_strlen(s1);
+	s1_len = ft_strlen(s1) - 1;
+	while (ft_haschar(set, s1[s1_len]))
+	{
+		s1_len--;
+	}
+	return (s1_len);	
 }
 
 char			*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	s1_len;
 	size_t	start;
 	size_t	end;
 	size_t	i;
 	char	*trim;
 
-	s1_len = ft_strlen(s1);
-	start = set_start_end(s1, set);
-	end = s1_len - set_start_end(s1 + (s1_len - ft_strlen(set)), set);
+	start = set_start(s1, set);
+	end = set_end(s1, set);
 	i = 0;
-	trim = malloc((end - start) * sizeof(char));
+	trim = malloc((end - start + 1) * sizeof(char));
 	if (!trim)
 		return (NULL);
-	while (start < end)
+	while (start <= end)
 	{
 		trim[i] = s1[start];
 		i++;
