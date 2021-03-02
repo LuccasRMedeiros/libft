@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 19:56:13 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/01 02:09:47 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/01 18:43:04 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strdup(const char *str)
 	int		str_size;
 
 	str_size = ft_strlen(str);
-	ret = (char*)malloc(str_size * sizeof(char));
+	ret = (char*)malloc((str_size + 1) * sizeof(char));
 	if (!ret)
 		return (NULL);
-	ft_strlcpy(ret, str, str_size);
+	ft_strlcpy(ret, str, str_size + 1);
 	return (ret);
 }

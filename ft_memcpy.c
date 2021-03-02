@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 00:42:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/23 20:03:09 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/01 15:16:23 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t cnt)
 	unsigned char	*src_aux;
 	size_t			i;
 
-	if ((!dst && !src) || cnt == 0)
+	if (!dst && !src)
 		return (NULL);
 	dst_aux = (unsigned char*)dst;
 	src_aux = (unsigned char*)src;
