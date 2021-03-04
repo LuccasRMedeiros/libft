@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:20:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/25 22:07:11 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:36:30 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s2_len = ft_strlen(s2);
 	i = 0;
 	join = malloc((s1_len + s2_len) * sizeof(char));
-	if (!join)
+	if (!join || (!s1 && !s2))
 		return (NULL);
-	while (s1[i] != '\0')
+	while (s1[i])
 	{
 		join[i] = s1[i];
 		i++;
 	}
-	while (s2[i - s1_len] != '\0')
+	while (s2[i - s1_len])
 	{
 		join[i] = s2[i - s1_len];
 		i++;

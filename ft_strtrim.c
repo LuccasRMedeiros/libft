@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 22:10:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/03 16:46:51 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:39:24 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*trim;
 
+	if (!s1 || !set)
+		return ((char*)s1);
 	start = 0;
 	while (ft_haschar(set, s1[start]))
 		start++;

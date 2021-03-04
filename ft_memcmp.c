@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 00:52:44 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/24 18:16:51 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 15:10:13 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (aux1[i] > aux2[i])
-			return (1);
-		else if (aux1[i] < aux2[i])
-			return (-1);
+		if (aux1[i] != aux2[i])
+			return (aux1[i] - aux2[i]);
 		i++;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:47:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/18 13:35:11 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 13:27:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_bzero(void *s, size_t n)
 
 	s_aux = (unsigned char*)s;
 	i = 0;
-	while (i < n && s_aux[i] != '\0')
+	while (i < n)
 	{
-		s_aux[i] = '\0';
+		s_aux[i] = 0;
 		i++;
 	}
 }
