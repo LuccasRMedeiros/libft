@@ -6,11 +6,12 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 01:27:29 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 01:46:57 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static void		ft_error(char **split, int len)
 {
@@ -31,11 +32,13 @@ static size_t	count_strs(char const *str, char c)
 	size_t	cnt;
 	int		flag;
 
+	printf("str: \e[1;33m%s\e[0m\n", str);
 	cnt = 0;
 	i = 0;
 	flag = 0;
 	while (str[i] != '\0')
 	{
+		printf("str[\e[1;35m%zu\e[0m]: \e[1;32m%i\e[0m\n", i, str[i]);
 		if (str[i] != c && (!flag))
 			flag = 1;
 		else if (str[i] == c && flag == 1)
@@ -45,6 +48,7 @@ static size_t	count_strs(char const *str, char c)
 		}
 		i++;
 	}
+	printf("cnt: \e[1;32m%zu\e[0m", cnt);
 	return (cnt + 1);
 }
 
@@ -119,8 +123,6 @@ char			**ft_split(char const *str, char c)
 	free(list);
 	return (split);
 }
-
-#include <stdio.h>
 
 int				main()
 {
