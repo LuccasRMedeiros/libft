@@ -6,13 +6,13 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/26 16:40:13 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:02:18 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_intlen(int n)
+static int	ft_intlen(long int n)
 {
 	int	cnt;
 
@@ -25,7 +25,7 @@ static int	ft_intlen(int n)
 	return (cnt);
 }
 
-static int	ft_powerten(int n)
+static int	ft_powerten(long int n)
 {
 	int	nlen;
 	int power;
@@ -42,27 +42,27 @@ static int	ft_powerten(int n)
 
 char		*ft_itoa(int n)
 {
-	char	*itoa;
-	int		i;
-	int		du;
+	long int	ln;
+	char		*itoa;
+	int			i;
+	int			du;
 
-	itoa = malloc((ft_intlen(n) + 1) * sizeof(char));
+	ln = n;
+	itoa = malloc((ft_intlen(ln) + 1) * sizeof(char*));
 	if (!itoa)
 		return (NULL);
 	i = 0;
-	if (n < 0)
+	if (ln < 0)
 	{
-		itoa[i] = '-';
-		n *= -1;
-		i++;
+		itoa[i++] = '-';
+		ln *= -1;
 	}
-	du = ft_powerten(n);
+	du = ft_powerten(ln);
 	while (du > 0)
 	{
-		itoa[i] = (n / du) + 48;
-		n %= du;
+		itoa[i++] = (ln / du) + 48;
+		ln %= du;
 		du /= 10;
-		i++;
 	}
 	itoa[i] = '\0';
 	return (itoa);

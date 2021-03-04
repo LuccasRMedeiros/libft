@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 22:10:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/01 01:51:44 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/03 16:46:51 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,6 @@ static int		ft_haschar(const char *str, char c)
 	return (0);
 }
 
-static size_t	set_start(char const *s1, char const *set)
-{
-	size_t	many;
-
-	many = 0;
-	while (ft_haschar(set, s1[many]))
-	{
-		many++;
-	}
-	return (many);
-}
-
-static size_t	set_end(char const *s1, char const *set)
-{
-	size_t	s1_len;
-
-	s1_len = ft_strlen(s1) - 1;
-	while (ft_haschar(set, s1[s1_len]))
-	{
-		s1_len--;
-	}
-	return (s1_len);
-}
-
 char			*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
@@ -59,8 +35,12 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*trim;
 
-	start = set_start(s1, set);
-	end = set_end(s1, set);
+	start = 0;
+	while (ft_haschar(set, s1[start]))
+		start++;
+	end = ft_strlen(s1) - 1;
+	while (end > start && ft_haschar(set, s1[end]))
+		end--;
 	i = 0;
 	trim = malloc((end - start + 1) * sizeof(char));
 	if (!trim)

@@ -6,13 +6,13 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:07:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/01 02:09:01 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:23:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_intlen(int n)
+static int	ft_intlen(long int n)
 {
 	int cnt;
 
@@ -25,7 +25,7 @@ static int	ft_intlen(int n)
 	return (cnt);
 }
 
-static int	ft_powerten(int n)
+static int	ft_powerten(long int n)
 {
 	int nlen;
 	int power;
@@ -42,22 +42,23 @@ static int	ft_powerten(int n)
 
 void		ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	int		du;
+	long int	ln;
+	int			i;
+	int			du;
 
+	ln = n;
 	i = 0;
-	if (n < 0)
+	if (ln < 0)
 	{
 		write(fd, "-", 1);
-		n *= -1;
+		ln *= -1;
 	}
-	du = ft_powerten(n);
+	du = ft_powerten(ln);
 	while (du > 0)
 	{
-		i = (n / du) + 48;
-		n %= du;
+		i = (ln / du) + 48;
+		ln %= du;
 		du /= 10;
 		write(fd, &i, 1);
-		i++;
 	}
 }
