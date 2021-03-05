@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 22:10:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 19:39:24 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 20:43:02 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*trim;
 
-	if (!s1 || !set)
+	if ((!s1 || *s1 == 0) || !set)
 		return ((char*)s1);
 	start = 0;
 	while (ft_haschar(set, s1[start]))
@@ -44,7 +44,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	while (end > start && ft_haschar(set, s1[end]))
 		end--;
 	i = 0;
-	trim = malloc((end - start + 1) * sizeof(char));
+	trim = malloc((end - start + 2) * sizeof(char));
 	if (!trim)
 		return (NULL);
 	while (start <= end)

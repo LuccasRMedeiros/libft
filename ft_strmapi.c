@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:13:45 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 19:40:24 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 20:29:38 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*fstr;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	fstr = malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!fstr)
 		return (NULL);

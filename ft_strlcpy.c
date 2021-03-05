@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 09:25:05 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/03 13:37:03 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 20:36:19 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	ss;
 
+	if (!src)
+		return (0);
 	i = 0;
 	ss = ft_strlen(src);
 	if (size == 0)

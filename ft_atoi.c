@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/02/19 23:24:42 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 22:22:29 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,6 @@ static int	f_signal(int c)
 	return (1);
 }
 
-static int	calc_amount(long int amount, int sig)
-{
-	if (sig != 0)
-		amount *= sig;
-	return (amount);
-}
-
 int			ft_atoi(const char *str)
 {
 	long int	am;
@@ -50,12 +43,21 @@ int			ft_atoi(const char *str)
 	while (*str != '\0')
 	{
 		if (ft_isdigit(*str))
-			am = (am * 10) + (*str - 48);
+		{
+			if ((am = (am * 10) + (*str - 48)) > 2147483648)
+			{
+				if (sig < 0)
+					return (0);
+				return (-1);
+			}
+		}
 		else if ((*str == '-' || *str == '+') && sig == 0)
 			sig = f_signal(*str);
 		else if (am > 0 || sig != 0 || !(ft_isspace(*str)))
 			break ;
 		str++;
 	}
-	return (calc_amount(am, sig));
+	if (sig)
+		am *= sig;
+	return (am);
 }

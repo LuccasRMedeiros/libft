@@ -6,20 +6,20 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 14:36:32 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/04 20:26:06 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static void		ft_error(char **split, int len)
+static void		ft_error(char **split, int len, size_t *wise)
 {
 	while (len >= 0)
 	{
 		free(split[len]);
 		len--;
 	}
+	free(wise);
 	free(split);
 }
 
@@ -52,7 +52,6 @@ static size_t	*wise(char const *str, char c, int stars)
 	size_t	questions;
 	size_t	reflections;
 	size_t	truth;
-	int		debugger = 0;
 
 	if (!(wisdom = calloc((stars * 2), sizeof(int*))))
 		return (NULL);
@@ -70,7 +69,6 @@ static size_t	*wise(char const *str, char c, int stars)
 				reflections++;
 			wisdom[truth++] = questions;
 			wisdom[truth++] = reflections;
-			debugger++;
 			questions = reflections;
 		}
 	}
@@ -84,6 +82,8 @@ char			**ft_split(char const *str, char c)
 	size_t	i;
 	size_t	*dl;
 
+	if (!str || !c)
+		return (NULL);
 	n_strs = count_strs(str, c);
 	i = 0;
 	dl = wise(str, c, n_strs);
@@ -94,8 +94,7 @@ char			**ft_split(char const *str, char c)
 		split[i] = ft_substr(str, dl[i + i], (dl[i + (i + 1)] - dl[i + i]));
 		if (!(split[i]))
 		{
-			free(dl);
-			ft_error(split, i);
+			ft_error(split, i, dl);
 			return (NULL);
 		}
 		i++;
@@ -104,14 +103,3 @@ char			**ft_split(char const *str, char c)
 	split[i] = NULL;
 	return (split);
 }
-
-/*int				main()
-{
-	size_t	i;
-	char	**ret = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
-
-	for (i = 0; i < count_strs("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' '); i++)
-		printf("String[\e[1;35m%zu\e[0m]: \e[1;33m%s\e[0m\n", i, ret[i]);
-	free(ret);
-	return 0;
-}*/
