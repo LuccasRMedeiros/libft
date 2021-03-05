@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 20:26:06 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/05 09:50:37 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static size_t	*wise(char const *str, char c, int stars)
 	size_t	reflections;
 	size_t	truth;
 
-	if (!(wisdom = calloc((stars * 2), sizeof(int*))))
+	if (!(wisdom = ft_calloc((stars * 2), sizeof(int*))))
 		return (NULL);
 	questions = 0;
 	reflections = 0;
