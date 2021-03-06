@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 22:10:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 20:43:02 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/05 22:49:38 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,27 @@ static int		ft_haschar(const char *str, char c)
 
 char			*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
+	int		stt;
+	int		end;
 	size_t	i;
 	char	*trim;
 
-	if ((!s1 || *s1 == 0) || !set)
-		return ((char*)s1);
-	start = 0;
-	while (ft_haschar(set, s1[start]))
-		start++;
+	if (!s1)
+		return (NULL);
+	stt = 0;
+	while (ft_haschar(set, s1[stt]))
+		stt++;
 	end = ft_strlen(s1) - 1;
-	while (end > start && ft_haschar(set, s1[end]))
+	while (end > stt && ft_haschar(set, s1[end]))
 		end--;
 	i = 0;
-	trim = malloc((end - start + 2) * sizeof(char));
-	if (!trim)
+	if (!(trim = malloc(sizeof(char) * (end - stt + 2))))
 		return (NULL);
-	while (start <= end)
+	while (stt <= end)
 	{
-		trim[i] = s1[start];
+		trim[i] = s1[stt];
 		i++;
-		start++;
+		stt++;
 	}
 	trim[i] = '\0';
 	return (trim);

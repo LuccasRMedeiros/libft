@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/05 09:50:37 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/05 22:28:12 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,30 +46,30 @@ static size_t	count_strs(char const *str, char c)
 	return (cnt);
 }
 
-static size_t	*wise(char const *str, char c, int stars)
+static size_t	*wise(char const *path, char truth, int stars)
 {
 	size_t	*wisdom;
 	size_t	questions;
+	size_t	answers;
 	size_t	reflections;
-	size_t	truth;
 
 	if (!(wisdom = ft_calloc((stars * 2), sizeof(int*))))
 		return (NULL);
 	questions = 0;
+	answers = 0;
 	reflections = 0;
-	truth = 0;
-	while (str[questions] != '\0')
+	while (path[questions] != '\0')
 	{
-		if (str[questions] == c)
+		if (path[questions] == truth)
 			questions++;
-		else if (str[questions] != c)
+		else if (path[questions] != truth)
 		{
-			reflections = questions;
-			while (str[reflections] != c && str[reflections] != '\0')
-				reflections++;
-			wisdom[truth++] = questions;
-			wisdom[truth++] = reflections;
-			questions = reflections;
+			answers = questions;
+			while (path[answers] != truth && path[answers] != '\0')
+				answers++;
+			wisdom[reflections++] = questions;
+			wisdom[reflections++] = answers;
+			questions = answers;
 		}
 	}
 	return (wisdom);
@@ -82,16 +82,16 @@ char			**ft_split(char const *str, char c)
 	size_t	i;
 	size_t	*dl;
 
-	if (!str || !c)
+	if (!str)
 		return (NULL);
 	n_strs = count_strs(str, c);
 	i = 0;
 	dl = wise(str, c, n_strs);
-	if (!(split = malloc(sizeof(char **) * (n_strs + 1))))
+	if (!(split = malloc(sizeof(char**) * (n_strs + 1))))
 		return (NULL);
 	while (i < n_strs)
 	{
-		split[i] = ft_substr(str, dl[i + i], (dl[i + (i + 1)] - dl[i + i]));
+		split[i] = ft_substr(str, dl[i + i], (dl[i + i + 1] - dl[i + i]));
 		if (!(split[i]))
 		{
 			ft_error(split, i, dl);
