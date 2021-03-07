@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/02/26 22:55:29 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/03/07 16:58:58 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean:
-	rm -f $(NAME)
+	rm -f $(NAME) $(OBJS)
 
 re: fclean all
 
