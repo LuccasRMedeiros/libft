@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 22:22:29 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/09 22:20:41 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,12 @@ int			ft_atoi(const char *str)
 				return (-1);
 			}
 		}
-		else if ((*str == '-' || *str == '+') && sig == 0)
+		else if ((*str == '-' || *str == '+') && (sig == 0 && am == 0))
 			sig = f_signal(*str);
 		else if (am > 0 || sig != 0 || !(ft_isspace(*str)))
 			break ;
 		str++;
 	}
-	if (sig)
-		am *= sig;
+	am = sig != 0 ? am *= sig : am;
 	return (am);
 }

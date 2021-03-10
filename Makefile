@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/03/07 16:58:58 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/03/09 22:05:49 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,13 +62,9 @@ $(OBJS): $(FILES)
 clean: 
 	rm -f $(OBJS)
 
-fclean:
+fclean: clean
 	rm -f $(NAME) $(OBJS)
 
 re: fclean all
 
 .PHONY: clean fclean all re
-
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRC)
-	gcc -shared -o libft.so $(OBJ)
