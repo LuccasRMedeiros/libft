@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 10:24:55 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/24 12:04:14 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/03/24 12:04:44 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/03/24 15:33:17 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *))
 {
-	t_list *aux;
-
-	if (lst == NULL)
-		return ;
-	aux = lst;
-	while (aux != NULL)
-	{
-		f(aux->content);
-		aux = aux->next;
-	}
 }
