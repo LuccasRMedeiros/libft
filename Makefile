@@ -6,11 +6,13 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/03/24 22:08:47 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/03/25 14:32:49 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+HEADER = libft.h
 
 FILES = ft_memset.c \
 		ft_bzero.c \
@@ -46,8 +48,7 @@ FILES = ft_memset.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-
-BONUS = ft_lstnew.c \
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -58,11 +59,10 @@ BONUS = ft_lstnew.c \
 		ft_lstmap.c \
 
 OBJS = $(FILES:%.c=%.o)
-BOBJ = $(BONUS:%.c=%.o)
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror -I ./ -c $(FILES)
+FLAGS = -Wall -Wextra -Werror
 
 ARCHV = ar -rcs
 
@@ -72,21 +72,14 @@ $(NAME): $(OBJS)
 	$(ARCHV) $(NAME) $(OBJS)
 
 %.o: %.c %.h
-	$(CC) -o $@ $< $(FLAGS)
-
-bonus : $(NAME)
-
-$(NAME): $(BOBJ)
-	$(ARCHV) $(NAME) $(BOBJ)
+	$(CC) -o $@ $< $(FLAGS) $(FILES)
 
 clean: 
-	rm -f $(OBJS) $(BOBJ)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-rebonus: fclean bonus
-
-.PHONY: clean fclean all re rebonus
+.PHONY: clean fclean all re
