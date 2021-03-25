@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:04:30 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/24 10:20:07 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/24 18:57:15 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *lst_aux;
+	t_list *aux;
 	t_list *holder;
 
 	if (*lst == NULL)
 		return ;
-	lst_aux = *lst;
-	while (lst_aux != NULL)
+	aux = *lst;
+	while (aux != NULL)
 	{
-		del(lst_aux->content);
-		holder = lst_aux->next;
-		free(lst_aux);
-		lst_aux = holder;
+		del(aux->content);
+		holder = aux->next;
+		free(aux);
+		aux = holder;
 	}
 	*lst = NULL;
 }

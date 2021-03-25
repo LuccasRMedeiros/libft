@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/03/09 22:05:49 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/03/24 22:08:47 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,24 +47,46 @@ FILES = ft_memset.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
-OBJS = $(FILES:%.c=%.o)
+BONUS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
-CC = gcc -Wall -Wextra -Werror -I ./ -c $(FILES)
+OBJS = $(FILES:%.c=%.o)
+BOBJ = $(BONUS:%.c=%.o)
+
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror -I ./ -c $(FILES)
+
+ARCHV = ar -rcs
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(ARCHV) $(NAME) $(OBJS)
 
-$(OBJS): $(FILES)
-	$(CC) $(FILES)
+%.o: %.c %.h
+	$(CC) -o $@ $< $(FLAGS)
+
+bonus : $(NAME)
+
+$(NAME): $(BOBJ)
+	$(ARCHV) $(NAME) $(BOBJ)
 
 clean: 
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BOBJ)
 
 fclean: clean
-	rm -f $(NAME) $(OBJS)
+	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean all re
+rebonus: fclean bonus
+
+.PHONY: clean fclean all re rebonus
