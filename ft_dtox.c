@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 09:29:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/28 09:42:26 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/28 10:10:31 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	hex_len(int dn)
 	return (len);
 }
 
-char			ft_dtox(int dn)
+char			*ft_dtox(int dn)
 {
 	size_t	len;
 	char	dgt;
@@ -37,7 +37,11 @@ char			ft_dtox(int dn)
 	while (len--)
 	{
 		dgt = dn % 16;
-		hex[len] = dgt > 9 && dgt < 16 : dgt + 55; dgt + 48;
+		if (dgt > 9 && dgt < 16)
+			dgt += 55;
+		else
+			dgt += 48;
+		hex[len] = dgt;
 		dn /= 16;
 	}
 	return (hex);

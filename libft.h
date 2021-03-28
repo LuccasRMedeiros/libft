@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/24 19:03:54 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/28 10:09:02 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
 								void *(*f)(void *),
 								void (*del)(void *));
+char				*ft_dtox(int dn);
 
 #endif
