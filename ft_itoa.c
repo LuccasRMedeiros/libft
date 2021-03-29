@@ -6,28 +6,23 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/04 21:47:19 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:57:35 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_intlen(long int n)
+static size_t	ft_intlen(int n)
 {
-	int	cnt;
+	size_t len;
 
-	cnt = 0;
-	if (n <= 0)
-	{
-		n *= -1;
-		cnt++;
-	}
+	len = n ? 0 : 1;
 	while (n)
 	{
+		len ++;
 		n /= 10;
-		cnt++;
 	}
-	return (cnt);
+	return (len);
 }
 
 static int		ft_powerten(long int n)
