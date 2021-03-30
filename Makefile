@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/03/29 23:25:03 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/03/30 12:06:58 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,28 +60,32 @@ SRCS =	ft_memset.c \
 		ft_dtox.c \
 		ft_reallocncat.c \
 
-SRC_PATH = $(addprefix ./src/, $(SRCS))
+SRC_PATH = ${addprefix src/, ${SRCS}}
 
-OUTS = $(SRCS:%.c=./out/%.o)
+OUTS = ${SRCS:%.c=out/%.o}
 
-CC = gcc -Wall -Wextra -Werror
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror
 
 ARCHV = ar -rcs
 
-all: $(NAME)
+out/:
+	mkdir -p out
 
-$(NAME): $(OUTS)
-	$(ARCHV) $(NAME) $(OUTS)
+${NAME}: ${OUTS}
+	${ARCHV} ${NAME} ${OUTS}
 
-./out/%.o: ./src/%.c
-	mkdir -p ./out
-	$(CC) -I $(HEADER) -o $(OUTS) -c $(SRC_PATH)
+out/%.o:
+	${CC} ${FLAGS} -c ${SRC_PATH} -o ${OUTS}
+
+all: ${NAME}
 
 clean: 
 	rm -rf ./out
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f ${NAME}
 
 re: fclean all
 
