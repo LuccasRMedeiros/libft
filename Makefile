@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/03/29 11:21:17 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/03/29 23:25:03 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 HEADER = libft.h
 
-FILES = ft_memset.c \
+SRCS =	ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
@@ -60,24 +60,25 @@ FILES = ft_memset.c \
 		ft_dtox.c \
 		ft_reallocncat.c \
 
-OBJS = $(FILES:%.c=%.o)
+SRC_PATH = $(addprefix ./src/, $(SRCS))
 
-CC = gcc
+OUTS = $(SRCS:%.c=./out/%.o)
 
-FLAGS = -Wall -Wextra -Werror
+CC = gcc -Wall -Wextra -Werror
 
 ARCHV = ar -rcs
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(ARCHV) $(NAME) $(OBJS)
+$(NAME): $(OUTS)
+	$(ARCHV) $(NAME) $(OUTS)
 
-%.o: %.c %.h
-	$(CC) -o $@ $< $(FLAGS) $(FILES)
+./out/%.o: ./src/%.c
+	mkdir -p ./out
+	$(CC) -I $(HEADER) -o $(OUTS) -c $(SRC_PATH)
 
 clean: 
-	rm -f $(OBJS)
+	rm -rf ./out
 
 fclean: clean
 	rm -f $(NAME)
