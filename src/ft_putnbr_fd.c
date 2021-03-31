@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:07:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:23:38 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/03/31 17:11:47 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static size_t	intlen(long int n)
     return (len);
 }
 
-static int		ft_powerten(long int n)
+static int		powerten(long int n)
 {
 	int nlen;
 	int power;
 
-	nlen = ft_intlen(n);
+	nlen = intlen(n);
 	power = 1;
 	while (nlen > 1)
 	{
@@ -53,7 +53,7 @@ void			ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 		ln *= -1;
 	}
-	du = ft_powerten(ln);
+	du = powerten(ln);
 	while (du > 0)
 	{
 		i = (ln / du) + 48;

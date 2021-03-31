@@ -6,15 +6,21 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/03/30 12:06:58 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/03/31 17:10:31 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror
+
+ARCHV = ar -rcs
+
 HEADER = libft.h
 
-SRCS =	ft_memset.c \
+SRC =	ft_memset.c \
 		ft_bzero.c \
 		ft_memcpy.c \
 		ft_memccpy.c \
@@ -60,32 +66,30 @@ SRCS =	ft_memset.c \
 		ft_dtox.c \
 		ft_reallocncat.c \
 
-SRC_PATH = ${addprefix src/, ${SRCS}}
+SRC_PATH = ./src
 
-OUTS = ${SRCS:%.c=out/%.o}
+SRC_FULL = $(addprefix $(SRC_PATH)/,$(SRC))
 
-CC = gcc
+OUT = $(SRC:%.c=%.o)
 
-FLAGS = -Wall -Wextra -Werror
+OUT_PATH = ./out
 
-ARCHV = ar -rcs
+OUT_FULL = $(addprefix $(OUT_PATH)/,$(OUT))
 
-out/:
-	mkdir -p out
+$(NAME): $(OUT_FULL)
+	$(ARCHV) $(NAME) $(OUT_FULL)
 
-${NAME}: ${OUTS}
-	${ARCHV} ${NAME} ${OUTS}
+$(OUT_PATH)/%.o: $(SRC_PATH)/%.c
+	mkdir -p $(OUT_PATH)
+	$(CC) $(FLAGS) -I headers/ -o $@ -c $<
 
-out/%.o:
-	${CC} ${FLAGS} -c ${SRC_PATH} -o ${OUTS}
-
-all: ${NAME}
+all: $(NAME)
 
 clean: 
 	rm -rf ./out
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
 re: fclean all
 
