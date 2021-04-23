@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 12:04:44 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:14:11 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/04/03 12:25:18 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/04/09 18:00:47 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+size_t	ft_intlen(int n)
 {
-	t_list	*ret;
-	t_list	*temp;
+	size_t	len;
 
-	ret = NULL;
-	if (!lst)
-		return (NULL);
-	while (lst != NULL)
+	len = 0;
+	while (n)
 	{
-		temp = ft_lstnew(f(lst->content));
-		if (!temp)
-		{
-			if (!ret)
-				return (NULL);
-			ft_lstclear(&ret, del);
-		}
-		lst = lst->next;
-		ft_lstadd_back(&ret, temp);
+		len ++;
+		n /= 10;
 	}
-	return (ret);
+	return (len);
 }

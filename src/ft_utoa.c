@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 13:07:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/06 14:07:56 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/04/16 23:37:25 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdio.h>
 
-static int	powerten(long int n)
+static size_t	uintlen(unsigned int n)
 {
-	int	nlen;
+	size_t	len;
+
+	len = 0;
+	while (n)
+	{
+		len ++;
+		n /= 10;
+	}
+	return (len);
+}
+
+static int	powerten(size_t nlen)
+{
 	int	power;
 
-	nlen = ft_intlen(n);
 	power = 1;
 	while (nlen > 1)
 	{
@@ -28,25 +38,27 @@ static int	powerten(long int n)
 	return (power);
 }
 
-void	ft_putnbr_fd(int *n, int fd)
+char	*ft_utoa(unsigned int n)
 {
-	long int	ln;
-	int			i;
-	int			du;
+	unsigned long int	ln;
+	size_t				nlen;
+	char				*utoa;
+	int					i;
+	int					du;
 
-	ln = *n;
+	ln = n;
+	nlen = uintlen(ln);
+	utoa = malloc(sizeof(char) * (nlen + 1));
+	if (!utoa)
+		return (NULL);
 	i = 0;
-	if (ln < 0)
-	{
-		write(fd, "-", 1);
-		ln *= -1;
-	}
-	du = powerten(ln);
+	du = powerten(nlen);
 	while (du > 0)
 	{
-		i = (ln / du) + 48;
+		utoa[i++] = (ln / du) + 48;
 		ln %= du;
 		du /= 10;
-		write(fd, &i, 1);
 	}
+	utoa[i] = '\0';
+	return (utoa);
 }

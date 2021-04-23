@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 10:48:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:26:58 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/19 11:10:46 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_strchr(const char *str, int c)
 		}
 		i++;
 	}
-	return ((char*)str + i);
+	return ((char *)str + i);
 }

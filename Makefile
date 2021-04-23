@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/03/31 17:10:31 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/04/13 21:46:39 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,11 @@ FLAGS = -Wall -Wextra -Werror
 
 ARCHV = ar -rcs
 
+MSG_DONE = echo "-- Done!\n"
+
 HEADER = libft.h
+
+HEADER_PATH = ./
 
 SRC =	ft_memset.c \
 		ft_bzero.c \
@@ -65,32 +69,48 @@ SRC =	ft_memset.c \
 		ft_lstmap.c \
 		ft_dtox.c \
 		ft_reallocncat.c \
+		ft_intlen.c \
+		ft_ltoa.c \
+		ft_ltox.c \
+		ft_utoa.c \
+		ft_strhvchr.c \
 
 SRC_PATH = ./src
 
 SRC_FULL = $(addprefix $(SRC_PATH)/,$(SRC))
 
-OUT = $(SRC:%.c=%.o)
+OBJ = $(SRC:%.c=%.o)
 
-OUT_PATH = ./out
+OBJ_PATH = ./out
 
-OUT_FULL = $(addprefix $(OUT_PATH)/,$(OUT))
+OBJ_FULL = $(addprefix $(OBJ_PATH)/,$(OBJ))
 
-$(NAME): $(OUT_FULL)
-	$(ARCHV) $(NAME) $(OUT_FULL)
+makedeps:
+	@echo "-- Creating objects directory"
+	@mkdir -p $(OBJ_PATH)
 
-$(OUT_PATH)/%.o: $(SRC_PATH)/%.c
-	mkdir -p $(OUT_PATH)
-	$(CC) $(FLAGS) -I headers/ -o $@ -c $<
+$(NAME): makedeps $(OBJ_FULL)
+	@echo "-- Creating static library FT"
+	@$(ARCHV) $(NAME) $(OBJ_FULL)
+	@$(MSG_DONE)
+
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	@echo "-- Compiling $@"
+	@$(CC) $(FLAGS) -I $(HEADER_PATH) -o $@ -c $<
 
 all: $(NAME)
 
-clean: 
-	rm -rf ./out
+clean:
+	@echo "-- Removing objects of libft"
+	@rm -rf ./out
+	@$(MSG_DONE)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "-- Removing everything of libft"
+	@echo "NOTE: source code will be preserved"
+	@rm -f $(NAME)
+	@$(MSG_DONE)
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: clean fclean all re makedeps

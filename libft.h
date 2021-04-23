@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 10:02:33 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:09:07 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 typedef struct		s_list
 {
@@ -46,6 +47,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				*ft_calloc(size_t n_itens, size_t size);
 char				*ft_strdup(const char *str);
+
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -55,7 +57,15 @@ char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+void				ft_putnbr_fd(int *n, int fd);
+char				*ft_dtox(unsigned int dn);
+char				*ft_reallocncat(char *dst, char const *src);
+size_t				ft_intlen(int n);
+char				*ft_ltoa(long int n);
+char				*ft_ltox(unsigned long int dn);
+char				*ft_utoa(unsigned int n);
+bool				ft_strhvchr(const char *string, const char *grp_c);
+
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
@@ -67,7 +77,5 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst,
 								void *(*f)(void *),
 								void (*del)(void *));
-char				*ft_dtox(int dn);
-char				*ft_reallocncat(char *dst, char const *src);
 
 #endif

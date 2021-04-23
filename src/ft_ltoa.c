@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_ltoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 13:07:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/06 14:07:56 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/04/09 18:24:47 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdio.h>
 
-static int	powerten(long int n)
+static size_t	ft_lintlen(long int n)
+{
+	size_t	len;
+
+	len = 0;
+	while (n)
+	{
+		len ++;
+		n /= 10;
+	}
+	return (len);
+}
+
+static int	powerten(long long int n)
 {
 	int	nlen;
 	int	power;
 
-	nlen = ft_intlen(n);
+	nlen = ft_lintlen(n);
 	power = 1;
 	while (nlen > 1)
 	{
@@ -28,25 +40,30 @@ static int	powerten(long int n)
 	return (power);
 }
 
-void	ft_putnbr_fd(int *n, int fd)
+char	*ft_ltoa(long int ln)
 {
-	long int	ln;
-	int			i;
-	int			du;
+	long long int	lln;
+	char			*ltoa;
+	int				i;
+	int				du;
 
-	ln = *n;
+	lln = ln;
+	ltoa = malloc(sizeof(char) * (ft_lintlen(ln) + 1));
+	if (!ltoa)
+		return (NULL);
 	i = 0;
-	if (ln < 0)
+	if (lln < 0)
 	{
-		write(fd, "-", 1);
-		ln *= -1;
+		ltoa[i++] = '-';
+		lln *= -1;
 	}
-	du = powerten(ln);
+	du = powerten(lln);
 	while (du > 0)
 	{
-		i = (ln / du) + 48;
-		ln %= du;
+		ltoa[i++] = (lln / du) + 48;
+		lln %= du;
 		du /= 10;
-		write(fd, &i, 1);
 	}
+	ltoa[i] = '\0';
+	return (ltoa);
 }

@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_strhvchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 12:04:44 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:14:11 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/04/10 20:29:12 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/04/16 18:40:01 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Receives a char and a string and search for the char into the string. If    -
+** find it, returns true, otherwise, false.
+*/
+
 #include <libft.h>
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+bool	ft_strhvchr(const char *string, const char *grp_c)
 {
-	t_list	*ret;
-	t_list	*temp;
+	size_t	i;
+	size_t	grp_c_sz;
+	size_t	c;
 
-	ret = NULL;
-	if (!lst)
-		return (NULL);
-	while (lst != NULL)
+	i = 0;
+	grp_c_sz = ft_strlen(grp_c);
+	c = grp_c_sz;
+	while (string[i])
 	{
-		temp = ft_lstnew(f(lst->content));
-		if (!temp)
-		{
-			if (!ret)
-				return (NULL);
-			ft_lstclear(&ret, del);
-		}
-		lst = lst->next;
-		ft_lstadd_back(&ret, temp);
+		while (c > 0)
+			if (grp_c[--c] == string[i])
+				return (true);
+		++i;
+		c = grp_c_sz;
 	}
-	return (ret);
+	return (false);
 }
