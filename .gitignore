@@ -2,5 +2,7 @@ a.out
 main.c
 *.o
 *.a
+*.swp
+*.swo
 libftTester/
 out/
