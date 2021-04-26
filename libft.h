@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: lrocignoS <lrocigno@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/15 22:09:07 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/26 10:41:05 by lrocignoS        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
-void				ft_putnbr_fd(int *n, int fd);
+void				ft_putnbr_fd(int n, int fd);
 char				*ft_dtox(unsigned int dn);
 char				*ft_reallocncat(char *dst, char const *src);
 size_t				ft_intlen(int n);
 char				*ft_ltoa(long int n);
 char				*ft_ltox(unsigned long int dn);
 char				*ft_utoa(unsigned int n);
-bool				ft_strhvchr(const char *string, const char *grp_c);
+bool				ft_strhvchr(const char *string, unsigned char c);
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);

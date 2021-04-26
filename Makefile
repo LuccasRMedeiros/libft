@@ -1,16 +1,18 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/04/13 21:46:39 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/04/26 11:32:37 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+BIN = debugf
 
 CC = gcc
 
@@ -21,8 +23,6 @@ ARCHV = ar -rcs
 MSG_DONE = echo "-- Done!\n"
 
 HEADER = libft.h
-
-HEADER_PATH = ./
 
 SRC =	ft_memset.c \
 		ft_bzero.c \
@@ -85,18 +85,18 @@ OBJ_PATH = ./out
 
 OBJ_FULL = $(addprefix $(OBJ_PATH)/,$(OBJ))
 
-makedeps:
-	@echo "-- Creating objects directory"
-	@mkdir -p $(OBJ_PATH)
-
-$(NAME): makedeps $(OBJ_FULL)
+$(NAME): $(OBJ_PATH) $(OBJ_FULL)
 	@echo "-- Creating static library FT"
 	@$(ARCHV) $(NAME) $(OBJ_FULL)
 	@$(MSG_DONE)
 
+$(OBJ_PATH):
+	@echo "-- Creating objects directory"
+	@mkdir -p $(OBJ_PATH)
+
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@echo "-- Compiling $@"
-	@$(CC) $(FLAGS) -I $(HEADER_PATH) -o $@ -c $<
+	@$(CC) $(FLAGS) -I ./ -o $@ -c $<
 
 all: $(NAME)
 
@@ -112,5 +112,12 @@ fclean: clean
 	@$(MSG_DONE)
 
 re: fclean all
+
+debug: $FLAGS += -g
+
+debug: re
+	@echo " -- Creating debugger executable file"
+	@$(CC) $(FLAGS) -I ./ main.c -L. -lft -o $(BIN)
+	@$(MSG_DONE)
 
 .PHONY: clean fclean all re makedeps

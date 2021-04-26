@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: lrocignoS <lrocigno@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:07:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/06 14:07:56 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/26 10:41:06 by lrocignoS        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ static int	powerten(long int n)
 	return (power);
 }
 
-void	ft_putnbr_fd(int *n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long int	ln;
 	int			i;
 	int			du;
 
-	ln = *n;
+	ln = n;
 	i = 0;
 	if (ln < 0)
 	{
