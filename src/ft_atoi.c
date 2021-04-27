@@ -34,6 +34,18 @@ static long int	calc_am(long int am, int sig, char c)
 	return (am);
 }
 
+static long int	calc_am(long int am, int sig, char c)
+{
+	am = (am * 10) + (c - 48);
+	if (am > 2147483648)
+	{
+		if (sig < 0)
+			return (0);
+		return (-1);
+	}
+	return (am);
+}
+
 int	ft_atoi(const char *str)
 {
 	long int	am;

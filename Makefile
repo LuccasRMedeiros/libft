@@ -7,7 +7,6 @@
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
 #    Updated: 2021/04/26 13:46:50 by lrocigno         ###   ########.fr        #
-#                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
@@ -118,4 +117,4 @@ debug: re
 	@$(CC) $(FLAGS) -I ./ main.c -L. -lft -o $(BIN)
 	@$(MSG_DONE)
 
-.PHONY: clean fclean all re makedeps
+.PHONY: clean fclean all re

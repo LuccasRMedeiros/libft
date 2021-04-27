@@ -1,6 +1,9 @@
 a.out
-*.o
+main.c
 *.a
-*libftTester/
+*.swp
+*.swo
+libftTester/
+out/
 debugf*
 main.c
