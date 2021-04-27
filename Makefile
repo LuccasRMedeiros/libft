@@ -15,7 +15,7 @@ BIN = debugf
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
 ARCHV = ar -rcs
 
@@ -112,9 +112,10 @@ fclean: clean
 
 re: fclean all
 
+debug: FLAGS += -g
+
 debug: re
 	@echo " -- Creating debugger executable file"
-	@$(CC) $(FLAGS) -I ./ main.c -L. -lft -o $(BIN)
 	@$(MSG_DONE)
 
 .PHONY: clean fclean all re
