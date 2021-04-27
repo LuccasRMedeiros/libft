@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:52:37 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:31:59 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/26 20:02:00 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,28 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	stti;
-	size_t	subi;
+	size_t	i;
 	size_t	alloc;
 	char	*sub;
 
-	if (!s)
-		return (NULL);
-	stti = (size_t)start;
-	subi = 0;
+	i = 0;
 	alloc = ft_strlen(s);
+	if (start > alloc)
+	{
+		alloc = 0;
+		start = 0;
+	}
+	alloc -= start;
 	if (alloc > len)
 		alloc = len;
-	sub = calloc((alloc + 1), sizeof(char) * alloc + 1);
-	if (!sub)
+	sub = ft_calloc(alloc + 1, sizeof *sub);
+	if (!sub || !s)
 		return (NULL);
-	if (start >= ft_strlen(s))
-		return (sub);
-	while (subi < len && s[stti])
+	s += start;
+	while (i < alloc && s[i])
 	{
-		sub[subi] = s[stti];
-		stti++;
-		subi++;
+		sub[i] = s[i];
+		++i;
 	}
-	sub[subi] = '\0';
 	return (sub);
 }

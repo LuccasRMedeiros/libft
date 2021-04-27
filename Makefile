@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/04/26 11:32:37 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/04/26 13:46:50 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ BIN = debugf
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 ARCHV = ar -rcs
 
@@ -112,8 +112,6 @@ fclean: clean
 	@$(MSG_DONE)
 
 re: fclean all
-
-debug: $FLAGS += -g
 
 debug: re
 	@echo " -- Creating debugger executable file"

@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/16 22:39:50 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/26 20:19:21 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,23 @@ char	*ft_itoa(int n)
 	int			du;
 
 	ln = n;
-	itoa = malloc(sizeof(char) * (ft_intlen(ln) + 1));
+	itoa = ft_calloc(ft_intlen(n) + 1, sizeof *itoa);
 	if (!itoa)
 		return (NULL);
 	i = 0;
 	if (ln < 0)
 	{
-		itoa[i++] = '-';
+		itoa[i] = '-';
 		ln *= -1;
+		++i;
 	}
 	du = powerten(ln);
 	while (du > 0)
 	{
-		itoa[i++] = (ln / du) + 48;
+		itoa[i] = (ln / du) + 48;
 		ln %= du;
 		du /= 10;
+		++i;
 	}
-	itoa[i] = '\0';
 	return (itoa);
 }

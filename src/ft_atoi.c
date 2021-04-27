@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocignoS <lrocigno@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/24 17:29:05 by lrocignoS        ###   ########.fr       */
+/*   Updated: 2021/04/26 14:36:45 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,21 +40,22 @@ int	ft_atoi(const char *str)
 	int			sig;
 
 	am = 0;
-	sig = 0;
-	while (*str != '\0')
+	sig = 1;
+	while (ignorable(*str))
+		++str;
+	if (*str == '-')
 	{
-		if (ft_isdigit(*str))
-		{
-			am = calc_am(am, sig, *str);
-		}
-		else if (am > 0 || sig != 0 || !(ignorable(*str)))
-			break ;
-		if (*str == '-' && am == 0 && sig == 0)
-			sig = -1;
-		else if (((*str == '+' && am == 0) || am > 0) && sig == 0)
-			sig = 1;
-		str++;
+		sig = -1;
+		++str;
 	}
-	am *= sig;
+	else if (*str == '+')
+		++str;
+	while (ft_isdigit(*str))
+	{
+		am = calc_am(am, sig,*str);
+		++str;
+	}
+	if (am != 0 && am != -1)
+		am *= sig;
 	return (am);
 }
