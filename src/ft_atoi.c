@@ -34,18 +34,6 @@ static long int	calc_am(long int am, int sig, char c)
 	return (am);
 }
 
-static long int	calc_am(long int am, int sig, char c)
-{
-	am = (am * 10) + (c - 48);
-	if (am > 2147483648)
-	{
-		if (sig < 0)
-			return (0);
-		return (-1);
-	}
-	return (am);
-}
-
 int	ft_atoi(const char *str)
 {
 	long int	am;
@@ -64,7 +52,7 @@ int	ft_atoi(const char *str)
 		++str;
 	while (ft_isdigit(*str))
 	{
-		am = calc_am(am, sig,*str);
+		am = calc_am(am, sig, *str);
 		++str;
 	}
 	if (am != 0 && am != -1)
