@@ -3,3 +3,4 @@ a.out
 *.a
 *libftTester/
 debugf*
+main.c
