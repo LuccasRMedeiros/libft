@@ -6,18 +6,23 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 12:25:18 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/26 20:21:52 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/27 11:18:54 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t	ft_intlen(int n)
+size_t	ft_intlen(long int n)
 {
-	size_t	len;
+	size_t		len;
 
-	len = 0;
-	while (n)
+	len = 1;
+	if (n < 0)
+	{
+		n *= -1;
+		++len;
+	}
+	while (n >= 10)
 	{
 		++len;
 		n /= 10;
