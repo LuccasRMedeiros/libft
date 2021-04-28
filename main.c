@@ -16,10 +16,9 @@
 
 int	main(void)
 {
-	char			*res_ft;
+	long unsigned int	res_address;
 
-	res_ft = ft_itoa(-2147483648);
-	printf("RESULT = \e[0;33m%s\e[0m\n", res_ft);
-	free(res_ft);
+	res_address = 192012991029193732;
+	printf("RESULT = 0x%s\n", ft_ltox(res_address));
 	return (0);
 }
