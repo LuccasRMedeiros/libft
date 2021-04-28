@@ -39,10 +39,9 @@ char	*ft_dtox(unsigned int dn)
 	char	*hex;
 
 	len = hex_len(dn);
-	hex = malloc(sizeof(char) * len);
+	hex = ft_calloc(len + 1, sizeof(char));
 	if (!hex)
 		return (NULL);
-	hex[len] = 0;
 	while (len--)
 	{
 		dgt = dn % 16;

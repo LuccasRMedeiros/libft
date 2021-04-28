@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdint.h>
 # include <unistd.h>
 # include <stdbool.h>
 
@@ -60,7 +61,7 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 char				*ft_dtox(unsigned int dn);
 char				*ft_reallocncat(char *dst, char const *src);
-size_t				ft_intlen(long int n);
+size_t				ft_intlen(intmax_t n);
 char				*ft_ltoa(long int n);
 char				*ft_ltox(unsigned long int dn);
 char				*ft_utoa(unsigned int n);

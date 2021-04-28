@@ -7,11 +7,10 @@
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
 #    Updated: 2021/04/26 13:46:50 by lrocigno         ###   ########.fr        #
+#                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-BIN = debugf
 
 CC = gcc
 
@@ -115,7 +114,7 @@ re: fclean all
 debug: FLAGS += -g
 
 debug: re
-	@echo " -- Creating debugger executable file"
+	@echo " -- Recreating objects with -g"
 	@$(MSG_DONE)
 
 .PHONY: clean fclean all re
