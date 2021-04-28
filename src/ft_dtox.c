@@ -23,8 +23,8 @@ static size_t	hex_len(unsigned int dn)
 {
 	size_t	len;
 
-	len = 0;
-	while (dn)
+	len = 1;
+	while (dn >= 16)
 	{
 		len++;
 		dn /= 16;
