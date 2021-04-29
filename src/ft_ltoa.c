@@ -21,6 +21,8 @@ static size_t	total_size(long int ln, int p, char sig, size_t ln_sz)
 		p = 0;
 	else
 		p -= ln_sz;
+	if (!ln && !p)
+		return (t_sz);
 	if (ln < 0 || (sig == '+' || sig == ' '))
 		++t_sz;
 	t_sz += p + ln_sz;

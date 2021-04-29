@@ -12,7 +12,7 @@
 
 #include <libft.h>
 
-static size_t	total_size(int p, char sig, size_t un_sz)
+static size_t	total_size(unsigned int un, int p, char sig, size_t un_sz)
 {
 	size_t		t_sz;
 
@@ -21,6 +21,8 @@ static size_t	total_size(int p, char sig, size_t un_sz)
 		p = 0;
 	else
 		p -= un_sz;
+	if (!un && !p)
+		return (t_sz);
 	if (sig == '+' || sig == ' ')
 		++t_sz;
 	t_sz += p + un_sz;
@@ -36,7 +38,7 @@ char	*ft_utoa(unsigned int un, int p, char sig)
 
 	lun = un;
 	un_sz = ft_intlen(un);
-	t_sz = total_size(p, sig, un_sz);
+	t_sz = total_size(un, p, sig, un_sz);
 	utoa = ft_calloc(t_sz + 1, sizeof *utoa);
 	if (!utoa)
 		return (NULL);
