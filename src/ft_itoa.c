@@ -6,52 +6,72 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/27 11:05:34 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/29 11:43:25 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static int	powerten(long int n)
+static size_t	total_size(int n, int p, char sig, size_t n_sz)
 {
-	int	nlen;
-	int	power;
+	size_t		t_sz;
 
-	nlen = ft_intlen(n);
-	power = 1;
-	while (nlen > 1)
-	{
-		power *= 10;
-		nlen--;
-	}
-	return (power);
+	t_sz = 0;
+	if (p < 0 || p < (int)n_sz)
+		p = 0;
+	else
+		p -= n_sz;
+	if (n < 0 || (sig == '+' || sig == ' '))
+		++t_sz;
+	t_sz += p + n_sz;
+	return (t_sz);
 }
 
-char	*ft_itoa(int n)
+static void	set_sign(int n, char sig, char **itoa)
+{
+	char	*p_itoa;
+
+	p_itoa = *itoa;
+	if (n < 0)
+		p_itoa[0] = '-';
+	else if (sig == '+' || sig == ' ')
+		p_itoa[0] = sig;
+}
+
+static long int	set_ln(int n)
 {
 	long int	ln;
-	char		*itoa;
-	int			i;
-	int			du;
 
 	ln = n;
-	itoa = ft_calloc(ft_intlen(n) + 1, sizeof *itoa);
+	if (ln < 0)
+		ln *= -1;
+	return (ln);
+}
+
+char	*ft_itoa(int n, int p, char sig)
+{
+	long int	ln;
+	size_t		n_sz;
+	size_t		t_sz;
+	char		*itoa;
+
+	ln = set_ln(n);
+	n_sz = ft_intlen(n);
+	t_sz = total_size(n, p, sig, n_sz);
+	itoa = ft_calloc(t_sz + 1, sizeof *itoa);
 	if (!itoa)
 		return (NULL);
-	i = 0;
-	if (ln < 0)
+	while (n_sz)
 	{
-		itoa[i] = '-';
-		ln *= -1;
-		++i;
+		itoa[--t_sz] = (ln % 10) + 48;
+		ln /= 10;
+		--n_sz;
 	}
-	du = powerten(ln);
-	while (du > 0)
+	while (p)
 	{
-		itoa[i] = (ln / du) + 48;
-		ln %= du;
-		du /= 10;
-		++i;
+		itoa[--t_sz] = '0';
+		--p;
 	}
+	set_sign(n, sig, &itoa);
 	return (itoa);
 }

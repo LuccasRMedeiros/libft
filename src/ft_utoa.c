@@ -12,53 +12,44 @@
 
 #include <libft.h>
 
-size_t	uintlen(uintmax_t n)
+static size_t	total_size(int p, char sig, size_t un_sz)
 {
-	size_t		len;
+	size_t		t_sz;
 
-	len = 1;
-	while (n >= 10)
-	{
-		++len;
-		n /= 10;
-	}
-	return (len);
+	t_sz = 0;
+	if (p < 0 || p < (int)un_sz)
+		p = 0;
+	else
+		p -= un_sz;
+	if (sig == '+' || sig == ' ')
+		++t_sz;
+	t_sz += p + un_sz;
+	return (t_sz);
 }
 
-static int	powerten(long int n)
+char	*ft_utoa(unsigned int un, int p, char sig)
 {
-	int	nlen;
-	int	power;
-
-	nlen = uintlen(n);
-	power = 1;
-	while (nlen > 1)
-	{
-		power *= 10;
-		nlen--;
-	}
-	return (power);
-}
-
-char	*ft_utoa(unsigned int n)
-{
-	unsigned long int	ln;
+	long unsigned int	lun;
+	size_t				un_sz;
+	size_t				t_sz;
 	char				*utoa;
-	int					i;
-	int					du;
 
-	ln = n;
-	utoa = ft_calloc(uintlen(n) + 1, sizeof *utoa);
+	lun = un;
+	un_sz = ft_intlen(un);
+	t_sz = total_size(p, sig, un_sz);
+	utoa = ft_calloc(t_sz + 1, sizeof *utoa);
 	if (!utoa)
 		return (NULL);
-	i = 0;
-	du = powerten(ln);
-	while (du > 0)
+	while (un_sz)
 	{
-		utoa[i] = (ln / du) + 48;
-		ln %= du;
-		du /= 10;
-		++i;
+		utoa[--t_sz] = (lun % 10) + 48;
+		lun /= 10;
+		--un_sz;
+	}
+	while (p)
+	{
+		utoa[--t_sz] = '0';
+		--p;
 	}
 	return (utoa);
 }
