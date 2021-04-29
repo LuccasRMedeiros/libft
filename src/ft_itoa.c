@@ -63,7 +63,7 @@ char	*ft_itoa(int n, int p, char sig)
 	itoa = ft_calloc(t_sz + 1, sizeof *itoa);
 	if (!itoa)
 		return (NULL);
-	while (n_sz)
+	while (n_sz && t_sz)
 	{
 		itoa[--t_sz] = (ln % 10) + 48;
 		ln /= 10;

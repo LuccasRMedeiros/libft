@@ -42,7 +42,7 @@ char	*ft_utoa(unsigned int un, int p, char sig)
 	utoa = ft_calloc(t_sz + 1, sizeof *utoa);
 	if (!utoa)
 		return (NULL);
-	while (un_sz)
+	while (un_sz && t_sz)
 	{
 		utoa[--t_sz] = (lun % 10) + 48;
 		lun /= 10;
