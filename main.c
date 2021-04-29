@@ -17,7 +17,7 @@
 
 int	main(void)
 {
-	printf("test ft_itoa: (172, 0, 0) = %s\n", ft_itoa(172, 0, 0));
+		printf("test ft_itoa: (172, 0, 0) = %s\n", ft_itoa(172, 0, 0));
 	printf("test ft_itoa: (-172, 0, 0) = %s\n", ft_itoa(-172, 0, 0));
 	printf("test ft_itoa: (172, 0, '+') = %s\n", ft_itoa(172, 0, '+'));
 	printf("test ft_itoa: (-172, 0, '+') = %s\n", ft_itoa(-172, 0, '+'));

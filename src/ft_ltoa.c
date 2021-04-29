@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/27 11:05:34 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/29 20:02:47 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,8 @@ char	*ft_ltoa(long int ln, int p, char sig)
 		lln /= 10;
 		--ln_sz;
 	}
-	while (p)
-	{
+	while (ltoa)
 		ltoa[--t_sz] = '0';
-		--p;
-	}
 	set_sign(ln, sig, &ltoa);
 	return (ltoa);
 }

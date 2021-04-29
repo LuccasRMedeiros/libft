@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/27 11:05:34 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/29 20:03:05 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ char	*ft_utoa(unsigned int un, int p, char sig)
 		lun /= 10;
 		--un_sz;
 	}
-	while (p)
-	{
+	while (t_sz)
 		utoa[--t_sz] = '0';
-		--p;
-	}
 	return (utoa);
 }
