@@ -39,8 +39,8 @@ char	*ft_itoa(int n)
 		return (NULL);
 	while (n_sz)
 	{
-		itoa[--t_sz] = (cn % 10) + 48;
-		cn /= 10;
+		itoa[--t_sz] = (ln % 10) + 48;
+		ln /= 10;
 		--n_sz;
 	}
 	while (t_sz)
