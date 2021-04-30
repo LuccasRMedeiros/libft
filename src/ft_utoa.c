@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/29 20:03:05 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/30 10:45:16 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	set_sign(char sig, char **utoa)
 		p_utoa[0] = sig;
 }
 
-char	*ft_utoa(unsigned int un, bool pr, int p, char sig)
+char	*ft_utoa(unsigned int un, int p, char sig)
 {
 	long unsigned int	lun;
 	size_t				un_sz;
@@ -47,9 +47,7 @@ char	*ft_utoa(unsigned int un, bool pr, int p, char sig)
 
 	lun = un;
 	un_sz = ft_intlen(un);
-	t_sz = un_sz;
-	if (pr)
-		t_sz = total_size(un, p, sig, un_sz);
+	t_sz = total_size(un, p, sig, un_sz);
 	utoa = ft_calloc(t_sz + 1, sizeof *utoa);
 	if (!utoa)
 		return (NULL);
