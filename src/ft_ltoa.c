@@ -63,13 +63,13 @@ char	*ft_ltoa(long int ln, int p, char sig)
 	ltoa = ft_calloc(t_sz + 1, sizeof *ltoa);
 	if (!ltoa)
 		return (NULL);
-	while (ln_sz)
+	while (ln_sz && t_sz)
 	{
 		ltoa[--t_sz] = (lln % 10) + 48;
 		lln /= 10;
 		--ln_sz;
 	}
-	while (ltoa)
+	while (t_sz)
 		ltoa[--t_sz] = '0';
 	set_sign(ln, sig, &ltoa);
 	return (ltoa);
