@@ -39,8 +39,8 @@ char	*ft_ltoa(long int ln)
 		return (NULL);
 	while (ln_sz)
 	{
-		ltoa[--t_sz] = (ln % 10) + 48;
-		ln /= 10;
+		ltoa[--t_sz] = (lln % 10) + 48;
+		lln /= 10;
 		--ln_sz;
 	}
 	while (t_sz)
