@@ -17,18 +17,18 @@
 
 int	main(void)
 {
-	printf("test ft_itoa: (172, 0, 0) = %s\n", ft_itoa(172, 0, 0));
-	printf("test ft_itoa: (-172, 0, 0) = %s\n", ft_itoa(-172, 0, 0));
-	printf("test ft_itoa: (172, 0, '+') = %s\n", ft_itoa(172, 0, '+'));
-	printf("test ft_itoa: (-172, 0, '+') = %s\n", ft_itoa(-172, 0, '+'));
-	printf("test ft_itoa: (172, 0, ' ') = %s\n", ft_itoa(172, 0, ' '));
-	printf("test ft_itoa: (172, 0, 'a') = %s\n", ft_itoa(172, 0, 'a'));
-	printf("test ft_itoa: (-172, 0, 'a') = %s\n", ft_itoa(-172, 0, 'a'));
-	printf("test ft_itoa: (172, 5, 0) = %s\n", ft_itoa(172, 5, '+'));
-	printf("test ft_itoa: (-172, 5, 0) = %s\n", ft_itoa(-172, 5, 0));
-	printf("test ft_itoa: (-172, 5, '+') = %s\n", ft_itoa(-172, 5, 0));
-	printf("test ft_itoa: (-172, 5, 'a') = %s\n", ft_itoa(-172, 5, 0));
-	printf("test ft_itoa: (2147483647, 0, 0) = %s\n", ft_itoa(INT_MAX, 0, 0));
-	printf("test ft_itoa: (-2147483648, 0, 0) = %s\n", ft_itoa(INT_MIN, 0, 0));
+	printf("test ft_itoa: (172, 0, 0) = %s\n", ft_itoa(172, false, 0, 0));
+	printf("test ft_itoa: (-172, 0, 0) = %s\n", ft_itoa(-172, false, 0, 0));
+	printf("test ft_itoa: (172, 0, '+') = %s\n", ft_itoa(172, false, 0, '+'));
+	printf("test ft_itoa: (-172, 0, '+') = %s\n", ft_itoa(-172, false, 0, '+'));
+	printf("test ft_itoa: (172, 0, ' ') = %s\n", ft_itoa(172, false, 0, ' '));
+	printf("test ft_itoa: (172, 0, 'a') = %s\n", ft_itoa(172, false, 0, 'a'));
+	printf("test ft_itoa: (-172, 0, 'a') = %s\n", ft_itoa(-172, false, 0, 'a'));
+	printf("test ft_itoa: (172, 5, 0) = %s\n", ft_itoa(172, true, 5, '+'));
+	printf("test ft_itoa: (-172, 5, 0) = %s\n", ft_itoa(-172, true, 5, 0));
+	printf("test ft_itoa: (-172, 5, '+') = %s\n", ft_itoa(-172, true, 5, 0));
+	printf("test ft_itoa: (-172, 5, 'a') = %s\n", ft_itoa(-172, true, 5, 0));
+	printf("test ft_itoa: (2147483647, 0, 0) = %s\n", ft_itoa(INT_MAX, false, 0, 0));
+	printf("test ft_itoa: (-2147483648, 0, 0) = %s\n", ft_itoa(INT_MIN, false, 0, 0));
 	return (0);
 }
