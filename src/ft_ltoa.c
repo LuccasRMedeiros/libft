@@ -12,7 +12,7 @@
 
 #include <libft.h>
 
-static size_t	total_size(long int ln, bool pr, int p, char sig, size_t ln_sz)
+static size_t	total_size(long int ln, int p, char sig, size_t ln_sz)
 {
 	size_t		t_sz;
 
@@ -21,7 +21,7 @@ static size_t	total_size(long int ln, bool pr, int p, char sig, size_t ln_sz)
 		p = 0;
 	else
 		p -= ln_sz;
-	if (pr && !ln && !p)
+	if (!ln && !p)
 		return (t_sz);
 	if (ln < 0 || (sig == '+' || sig == ' '))
 		++t_sz;
@@ -50,7 +50,7 @@ static long long int	set_lln(long int ln)
 	return (lln);
 }
 
-char	*ft_ltoa(long int ln, bool pr, int p, char sig)
+char	*ft_ltoa(long int ln, int p, char sig)
 {
 	long long int	lln;
 	size_t			ln_sz;
@@ -59,7 +59,7 @@ char	*ft_ltoa(long int ln, bool pr, int p, char sig)
 
 	lln = set_lln(ln);
 	ln_sz = ft_intlen(ln);
-	t_sz = total_size(ln, pr, p, sig, ln_sz);
+	t_sz = total_size(ln, p, sig, ln_sz);
 	ltoa = ft_calloc(t_sz + 1, sizeof *ltoa);
 	if (!ltoa)
 		return (NULL);
