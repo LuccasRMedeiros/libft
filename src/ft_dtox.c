@@ -21,36 +21,36 @@
 
 static size_t	hex_len(unsigned int dn)
 {
-	size_t	len;
+	size_t	x_sz;
 
-	len = 1;
+	x_sz = 1;
 	while (dn >= 16)
 	{
-		len++;
+		x_sz++;
 		dn /= 16;
 	}
-	return (len);
+	return (x_sz);
 }
 
-char	*ft_dtox(unsigned int dn)
+char	*ft_dtox(unsigned int dn, hexcase font)
 {
-	size_t	len;
+	size_t	x_sz;
 	char	dgt;
-	char	*hex;
+	char	*dtox;
 
-	len = hex_len(dn);
-	hex = ft_calloc(len + 1, sizeof(char));
-	if (!hex)
+	x_sz = hex_len(dn);
+	dtox = ft_calloc(x_sz + 1, sizeof(char));
+	if (!dtox)
 		return (NULL);
-	while (len--)
+	while (x_sz)
 	{
 		dgt = dn % 16;
 		if (dgt > 9 && dgt < 16)
-			dgt = dgt + 55;
+			dgt = dgt + font;
 		else
 			dgt += 48;
-		hex[len] = dgt;
+		dtox[--x_sz] = dgt;
 		dn /= 16;
 	}
-	return (hex);
+	return (dtox);
 }

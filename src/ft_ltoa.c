@@ -6,39 +6,11 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/30 10:44:54 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/30 10:43:41 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-
-static size_t	total_size(long int ln, int p, char sig, size_t ln_sz)
-{
-	size_t		t_sz;
-
-	t_sz = 0;
-	if (p < 0 || p < (int)ln_sz)
-		p = 0;
-	else
-		p -= ln_sz;
-	if (!ln && !p)
-		return (t_sz);
-	if (ln < 0 || (sig == '+' || sig == ' '))
-		++t_sz;
-	t_sz += p + ln_sz;
-	return (t_sz);
-}
-
-static void	set_sign(long int ln, char sig, char **ltoa)
-{
-	char	*p_ltoa;
-
-	p_ltoa = *ltoa;
-	if (ln < 0)
-		p_ltoa[0] = '-';
-	else if (sig == '+' || sig == ' ')
-		p_ltoa[0] = sig;
-}
 
 static long long int	set_lln(long int ln)
 {
@@ -50,7 +22,7 @@ static long long int	set_lln(long int ln)
 	return (lln);
 }
 
-char	*ft_ltoa(long int ln, int p, char sig)
+char	*ft_ltoa(long int ln)
 {
 	long long int	lln;
 	size_t			ln_sz;
@@ -59,18 +31,19 @@ char	*ft_ltoa(long int ln, int p, char sig)
 
 	lln = set_lln(ln);
 	ln_sz = ft_intlen(ln);
-	t_sz = total_size(ln, p, sig, ln_sz);
+	t_sz = ln_sz;
+	if (ln < 0)
+		++t_sz;
 	ltoa = ft_calloc(t_sz + 1, sizeof *ltoa);
 	if (!ltoa)
 		return (NULL);
-	while (ln_sz && t_sz)
+	while (ln_sz)
 	{
-		ltoa[--t_sz] = (lln % 10) + 48;
-		lln /= 10;
+		ltoa[--t_sz] = (ln % 10) + 48;
+		ln /= 10;
 		--ln_sz;
 	}
 	while (t_sz)
-		ltoa[--t_sz] = '0';
-	set_sign(ln, sig, &ltoa);
+		ltoa[--t_sz] = '-';
 	return (ltoa);
 }
