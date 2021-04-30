@@ -32,7 +32,7 @@ static size_t	hex_len(unsigned int dn)
 	return (x_sz);
 }
 
-char	*ft_dtox(unsigned int dn, hexcase font)
+char	*ft_dtox(unsigned int dn, unsigned int font)
 {
 	size_t	x_sz;
 	char	dgt;

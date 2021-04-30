@@ -18,6 +18,9 @@
 # include <unistd.h>
 # include <stdbool.h>
 
+# define UPR 55
+# define LOW 87
+
 typedef struct		s_list
 {
 	void			*content;
@@ -62,8 +65,8 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_ltoa(long int n);
 char	*ft_utoa(unsigned int un);
-char	*ft_dtox(unsigned int dn, hexcase font);
-char	*ft_ltox(long unsigned int ldn, hexcase font);
+char	*ft_dtox(unsigned int dn, unsigned int font);
+char	*ft_ltox(long unsigned int ldn, unsigned int font);
 char	*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
