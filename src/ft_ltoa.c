@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/29 20:02:47 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/30 10:44:54 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static long long int	set_lln(long int ln)
 	return (lln);
 }
 
-char	*ft_ltoa(long int ln, bool pr, int p, char sig)
+char	*ft_ltoa(long int ln, int p, char sig)
 {
 	long long int	lln;
 	size_t			ln_sz;
@@ -59,9 +59,7 @@ char	*ft_ltoa(long int ln, bool pr, int p, char sig)
 
 	lln = set_lln(ln);
 	ln_sz = ft_intlen(ln);
-	t_sz = ln_sz;
-	if (pr)
-		t_sz = total_size(ln, p, sig, ln_sz);
+	t_sz = total_size(ln, p, sig, ln_sz);
 	ltoa = ft_calloc(t_sz + 1, sizeof *ltoa);
 	if (!ltoa)
 		return (NULL);
