@@ -15,7 +15,6 @@
 char	*ft_utoa(unsigned int un)
 {
 	size_t		un_sz;
-	size_t		t_sz;
 	char		*utoa;
 
 	un_sz = ft_intlen(un);
