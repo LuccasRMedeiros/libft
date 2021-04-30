@@ -29,7 +29,16 @@ static size_t	total_size(unsigned int un, int p, char sig, size_t un_sz)
 	return (t_sz);
 }
 
-char	*ft_utoa(unsigned int un, int p, char sig)
+static void	set_sign(char sig, char **utoa)
+{
+	char	*p_utoa;
+
+	p_utoa = *utoa;
+	if (sig == '+' || sig == ' ')
+		p_utoa[0] = sig;
+}
+
+char	*ft_utoa(unsigned int un, bool pr, int p, char sig)
 {
 	long unsigned int	lun;
 	size_t				un_sz;
@@ -40,7 +49,7 @@ char	*ft_utoa(unsigned int un, int p, char sig)
 	un_sz = ft_intlen(un);
 	t_sz = un_sz;
 	if (pr)
-		t_sz = total_size(n, p, sig, n_sz);
+		t_sz = total_size(un, p, sig, un_sz);
 	utoa = ft_calloc(t_sz + 1, sizeof *utoa);
 	if (!utoa)
 		return (NULL);
@@ -52,5 +61,6 @@ char	*ft_utoa(unsigned int un, int p, char sig)
 	}
 	while (t_sz)
 		utoa[--t_sz] = '0';
+	set_sign(sig, &utoa);
 	return (utoa);
 }
