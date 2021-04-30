@@ -59,7 +59,9 @@ char	*ft_ltoa(long int ln, int p, char sig)
 
 	lln = set_lln(ln);
 	ln_sz = ft_intlen(ln);
-	t_sz = total_size(ln, p, sig, ln_sz);
+	t_sz = ln_sz;
+	if (pr)
+		t_sz = total_size(n, p, sig, n_sz);
 	ltoa = ft_calloc(t_sz + 1, sizeof *ltoa);
 	if (!ltoa)
 		return (NULL);
