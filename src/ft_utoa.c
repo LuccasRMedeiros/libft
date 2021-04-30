@@ -38,7 +38,9 @@ char	*ft_utoa(unsigned int un, int p, char sig)
 
 	lun = un;
 	un_sz = ft_intlen(un);
-	t_sz = total_size(un, p, sig, un_sz);
+	t_sz = un_sz;
+	if (pr)
+		t_sz = total_size(n, p, sig, n_sz);
 	utoa = ft_calloc(t_sz + 1, sizeof *utoa);
 	if (!utoa)
 		return (NULL);

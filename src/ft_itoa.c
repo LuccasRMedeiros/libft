@@ -50,7 +50,7 @@ static long int	set_ln(int n)
 	return (ln);
 }
 
-char	*ft_itoa(int n, int p, char sig)
+char	*ft_itoa(int n, bool pr, int p, char sig)
 {
 	long int	ln;
 	size_t		n_sz;
@@ -59,7 +59,9 @@ char	*ft_itoa(int n, int p, char sig)
 
 	ln = set_ln(n);
 	n_sz = ft_intlen(n);
-	t_sz = total_size(n, p, sig, n_sz);
+	t_sz = n_sz;
+	if (pr)
+		t_sz = total_size(n, p, sig, n_sz);
 	itoa = ft_calloc(t_sz + 1, sizeof *itoa);
 	if (!itoa)
 		return (NULL);
