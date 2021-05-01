@@ -6,13 +6,13 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 21:26:59 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/30 21:28:08 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:45:49 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static size_t	ft_hexlen(uintmax_t dn)
+size_t	ft_hexlen(uintmax_t dn)
 {
 	size_t	x_sz;
 
