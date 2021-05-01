@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 09:29:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/09 17:43:35 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/04/30 21:28:40 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,13 @@
 
 #include <libft.h>
 
-static size_t	hex_len(unsigned int dn)
-{
-	size_t	x_sz;
-
-	x_sz = 1;
-	while (dn >= 16)
-	{
-		x_sz++;
-		dn /= 16;
-	}
-	return (x_sz);
-}
-
 char	*ft_dtox(unsigned int dn, unsigned int font)
 {
 	size_t	x_sz;
 	char	dgt;
 	char	*dtox;
 
-	x_sz = hex_len(dn);
+	x_sz = ft_hexlen(dn);
 	dtox = ft_calloc(x_sz + 1, sizeof(char));
 	if (!dtox)
 		return (NULL);
