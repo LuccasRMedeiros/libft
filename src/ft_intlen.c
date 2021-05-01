@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 12:25:18 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/30 22:54:39 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/01 15:07:24 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_intlen(intmax_t n)
 	size_t		len;
 
 	len = 1;
+	if (n < 0)
+		n *= -1;
 	while (n >= 10)
 	{
 		++len;
