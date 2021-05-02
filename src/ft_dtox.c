@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 09:29:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/30 21:28:40 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/02 12:11:15 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include <libft.h>
 
-char	*ft_dtox(unsigned int dn, unsigned int font)
+char	*ft_dtox(long unsigned int dn, unsigned int font)
 {
 	size_t	x_sz;
 	char	dgt;
