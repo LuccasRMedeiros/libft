@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/30 21:43:27 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/01 23:52:44 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define UPR 55
 # define LOW 87
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -81,7 +81,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst,
-					void *(*f)(void *),
-					void (*del)(void *));
+			void *(*f)(void *),
+			void (*del)(void *));
 
 #endif

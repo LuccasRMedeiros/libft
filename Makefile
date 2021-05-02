@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/04/30 22:45:09 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/01 23:55:50 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,7 +116,7 @@ re: fclean all
 debug: FLAGS += -g
 
 debug: re
-	@echo " -- Recreating objects with -g"
+	@echo "-- Recreating objects with -g"
 	@$(MSG_DONE)
 
 .PHONY: clean fclean all re
