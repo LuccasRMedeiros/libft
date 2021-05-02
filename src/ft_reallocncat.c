@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:16:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/02 11:47:46 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/02 11:50:35 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_reallocncat(char *dst, char const *src)
 	char	*temp;
 	size_t	alloc;
 
+	if (!dst && !src)
+		return (NULL);
 	dst_sz = ft_strlen(dst);
 	i = 0;
 	temp = ft_strdup(dst);
