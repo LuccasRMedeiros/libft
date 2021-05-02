@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/01 23:52:44 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/02 12:27:56 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_ltoa(long int n);
 char	*ft_utoa(unsigned int un);
-char	*ft_dtox(unsigned int dn, unsigned int font);
-char	*ft_ltox(long unsigned int ldn, unsigned int font);
+char	*ft_dtox(long unsigned int dn, unsigned int font);
 char	*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
