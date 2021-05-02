@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/01 23:55:50 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/02 12:28:58 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,6 @@ SRC =	ft_memset.c \
 		ft_reallocncat.c \
 		ft_intlen.c \
 		ft_ltoa.c \
-		ft_ltox.c \
 		ft_utoa.c \
 		ft_strhvchr.c \
 		ft_hexlen.c \
