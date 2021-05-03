@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dtox.c                                          :+:      :+:    :+:   */
+/*   ft_ltox.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-** ft_dtox takes an int as argument, converts it to hexadecimal base and return-
+** ft_ltox takes an int as argument, converts it to hexadecimal base and return-
 **  a pointer to char containing the value formated as string.
 ** It allocate memory like ft_itoa, so free is required to be used along with  -
 ** this function.
@@ -19,15 +19,15 @@
 
 #include <libft.h>
 
-char	*ft_dtox(unsigned int dn, unsigned int font)
+char	*ft_ltox(long unsigned int dn, unsigned int font)
 {
 	size_t	x_sz;
 	char	dgt;
-	char	*dtox;
+	char	*ltox;
 
 	x_sz = ft_hexlen(dn);
-	dtox = ft_calloc(x_sz + 1, sizeof(char));
-	if (!dtox)
+	ltox = ft_calloc(x_sz + 1, sizeof(char));
+	if (!ltox)
 		return (NULL);
 	while (x_sz)
 	{
@@ -36,8 +36,8 @@ char	*ft_dtox(unsigned int dn, unsigned int font)
 			dgt = dgt + font;
 		else
 			dgt += 48;
-		dtox[--x_sz] = dgt;
+		ltox[--x_sz] = dgt;
 		dn /= 16;
 	}
-	return (dtox);
+	return (ltox);
 }
