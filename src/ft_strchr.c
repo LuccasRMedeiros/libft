@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 10:48:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/19 11:10:46 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/05 10:57:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *str, int c)
 	{
 		if (str[i] == '\0' && find != '\0')
 		{
-			return (NULL);
+			return ((char *)str);
 		}
 		i++;
 	}
