@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/03 12:42:41 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/05 14:07:20 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_reallocncat(char *dst, char const *src);
 size_t	ft_intlen(intmax_t n);
 size_t	ft_uintlen(uintmax_t n);
 size_t	ft_hexlen(uintmax_t dn);
-bool	ft_strhvchr(const char *string, unsigned char c);
+bool	ft_strhvchr(const char *string, int c);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);

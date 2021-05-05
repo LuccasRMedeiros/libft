@@ -6,7 +6,7 @@
 /*   By: lrocignoS <lrocigno@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 20:29:12 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/24 10:34:50 by lrocignoS        ###   ########.fr       */
+/*   Updated: 2021/05/05 14:07:21 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include <libft.h>
 
-bool	ft_strhvchr(const char *string, unsigned char c)
+bool	ft_strhvchr(const char *string, int c)
 {
 	while (*string)
 	{
