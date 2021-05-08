@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:23:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/07 20:27:56 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/08 17:15:08 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # define FT_NUMERIC_H
 
 # include "libft.h"
-# include "ft_char"
 
 # define UPR 55
 # define LOW 87

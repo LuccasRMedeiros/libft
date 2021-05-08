@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:38:26 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/07 20:27:56 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/08 17:16:49 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
+int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
