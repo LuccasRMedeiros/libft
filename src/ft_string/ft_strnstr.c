@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 13:26:00 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:31:04 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:25:30 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <ft_string.h>
 
 char	*ft_strnstr(const char *str, const char *sub, size_t n)
 {

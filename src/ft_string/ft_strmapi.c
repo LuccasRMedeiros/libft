@@ -6,11 +6,12 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:13:45 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:29:28 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:26:14 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <ft_string.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

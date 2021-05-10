@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 20:19:21 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/08 17:14:49 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:11:04 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define FT_STRING_H
 
 # include "libft.h"
+# include "ft_char.h"
+# include "ft_memory.h"
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);

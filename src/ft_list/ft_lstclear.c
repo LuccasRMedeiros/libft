@@ -6,11 +6,12 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:04:30 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:07:10 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:16:29 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <ft_list.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

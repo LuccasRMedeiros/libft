@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocignoS <lrocigno@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:07:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/04/26 10:41:06 by lrocignoS        ###   ########.fr       */
+/*   Updated: 2021/05/10 13:28:38 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdio.h>
+#include <ft_write.h>
 
 static int	powerten(long int n)
 {
@@ -23,7 +23,7 @@ static int	powerten(long int n)
 	while (nlen > 1)
 	{
 		power *= 10;
-		nlen--;
+		--nlen;
 	}
 	return (power);
 }

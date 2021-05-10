@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strhvchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocignoS <lrocigno@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 20:29:12 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/05 14:07:21 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:26:37 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 */
 
 #include <libft.h>
+#include <ft_string.h>
 
 bool	ft_strhvchr(const char *string, int c)
 {

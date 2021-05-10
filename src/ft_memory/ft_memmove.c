@@ -6,11 +6,12 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 16:24:00 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:19:31 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:19:25 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <ft_memory.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {

@@ -6,11 +6,12 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:05:37 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/03/29 19:21:03 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:27:58 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <ft_write.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_reallocncat.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:16:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/02 11:50:35 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:26:21 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <ft_string.h>
 
 /*
 ** First duplicate dst to a buffer, then free dst memmory and destroy it.
