@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/09 00:52:30 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/10 17:47:18 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,82 +28,46 @@ SRC_PATH = ./src
 
 OBJ_PATH = ./out
 
-$(NAME): $(OBJ_PATH) char list memory numeric string write
-	@echo "-- Creating static library FT"
-	@$(ARCHV) $(NAME) $(OBJ_FULL)
+$(NAME): $(OBJ_PATH)
+	@echo "-- Creating $(NAME)"
+	@$(ARCHV) $(NAME)
 	@$(MSG_DONE)
 
 $(OBJ_PATH):
 	@echo "-- Creating objects directory"
 	@mkdir -p $(OBJ_PATH)
 
+all: char list memory numeric string write
+
 char:	MODULE = $(SRC_PATH)/ft_char
 
-char:	SRC = $(notdir $(wildcard $(MODULE)/*.c))
-
-char:	OBJ = $(SRC:%.c=%.o)
-
-char:	OBJ_FULL += $(addprefix $(OBJ_PATH)/ft_char/,$(OBJ))
-
-char:	
+char: $(NAME)
 	@$(MAKE_EXT)
 
 list:	MODULE = $(SRC_PATH)/ft_list
 
-list:	SRC = $(notdir $(wildcard $(MODULE)/*.c))
-
-list:	OBJ = $(SRC:%.c=%.o)
-
-list:	OBJ_FULL += $(addprefix $(OBJ_PATH)/ft_list/,$(OBJ))
-
-list:
+list: $(NAME)
 	@$(MAKE_EXT)
 
 memory:	MODULE = $(SRC_PATH)/ft_memory
 
-memory:	SRC = $(notdir $(wildcard $(MODULE)/*.c))
-
-memory:	OBJ = $(SRC:%.c=%.o)
-
-memory:	OBJ_FULL += $(addprefix $(OBJ_PATH)/ft_memory/,$(OBJ))
-
-memory:
+memory: $(NAME)
 	@$(MAKE_EXT)
 
 numeric:	MODULE = $(SRC_PATH)/ft_numeric
 
-numeric:	SRC = $(notdir $(wildcard $(MODULE)/*.c))
-
-numeric:	OBJ = $(SRC:%.c=%.o)
-
-numeric:	OBJ_FULL += $(addprefix $(OBJ_PATH)/ft_numeric/,$(OBJ))
-
-numeric:
+numeric: $(NAME)
 	@$(MAKE_EXT)
 
 string:	MODULE = $(SRC_PATH)/ft_string
 
-string:	SRC = $(notdir $(wildcard $(MODULE)/*.c))
-
-string:	OBJ = $(SRC:%.c=%.o)
-
-string:	OBJ_FULL += $(addprefix $(OBJ_PATH)/ft_string/,$(OBJ))
-
-string:
+string: $(NAME)
 	@$(MAKE_EXT)
 
 write:	MODULE = $(SRC_PATH)/ft_write
 
-write:	SRC = $(notdir $(wildcard $(MODULE)/*.c))
-
-write:	OBJ = $(SRC:%.c=%.o)
-
-write:	OBJ_FULL += $(addprefix $(OBJ_PATH)/ft_write/,$(OBJ))
-
-write:
+write: $(NAME)
 	@$(MAKE_EXT)
-
-all: $(NAME)
 
 clean:
 	@echo "-- Removing objects of libft"

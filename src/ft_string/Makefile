@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/08 17:25:40 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/10 17:44:59 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ OBJ_PATH = ../../out/ft_string
 OBJ_FULL = $(addprefix $(OBJ_PATH)/,$(OBJ))
 
 all: $(OBJ_PATH) $(OBJ_FULL)
+	@echo "-- Creating submodule $(NAME)"
+	@$(ARCHV) ../../$(NAME) $(OBJ_FULL)
 	@$(MSG_DONE)
 
 $(OBJ_PATH):
