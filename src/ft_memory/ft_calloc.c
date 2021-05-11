@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 16:21:59 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:20:50 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:11:42 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_memory.h>
 
 void	*ft_calloc(size_t n_itens, size_t size)

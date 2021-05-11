@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 00:52:44 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:20:38 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:11:53 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_memory.h>
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)

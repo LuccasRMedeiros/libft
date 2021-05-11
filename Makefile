@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/10 17:47:18 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/11 15:15:21 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,45 +28,52 @@ SRC_PATH = ./src
 
 OBJ_PATH = ./out
 
-$(NAME): $(OBJ_PATH)
-	@echo "-- Creating $(NAME)"
-	@$(ARCHV) $(NAME)
-	@$(MSG_DONE)
+$(NAME): $(OBJ_PATH) char fprintf gnl list memory numeric string write
 
 $(OBJ_PATH):
-	@echo "-- Creating objects directory"
+	@echo "-- Creating objects main directory"
 	@mkdir -p $(OBJ_PATH)
 
-all: char list memory numeric string write
+all: $(NAME)
 
 char:	MODULE = $(SRC_PATH)/ft_char
 
-char: $(NAME)
+char: $(OBJ_PATH)
+	@$(MAKE_EXT)
+
+fprintf:	MODULE = $(SRC_PATH)/ft_fprintf
+
+fprintf: $(OBJ_PATH)
+	@$(MAKE_EXT)
+
+gnl:	MODULE = $(SRC_PATH)/ft_gnl
+
+gnl: $(OBJ_PATH)
 	@$(MAKE_EXT)
 
 list:	MODULE = $(SRC_PATH)/ft_list
 
-list: $(NAME)
+list: $(OBJ_PATH)
 	@$(MAKE_EXT)
 
 memory:	MODULE = $(SRC_PATH)/ft_memory
 
-memory: $(NAME)
+memory: $(OBJ_PATH)
 	@$(MAKE_EXT)
 
 numeric:	MODULE = $(SRC_PATH)/ft_numeric
 
-numeric: $(NAME)
+numeric: $(OBJ_PATH)
 	@$(MAKE_EXT)
 
 string:	MODULE = $(SRC_PATH)/ft_string
 
-string: $(NAME)
+string: $(OBJ_PATH)
 	@$(MAKE_EXT)
 
 write:	MODULE = $(SRC_PATH)/ft_write
 
-write: $(NAME)
+write: $(OBJ_PATH)
 	@$(MAKE_EXT)
 
 clean:

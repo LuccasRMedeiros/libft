@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:52:37 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:25:49 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:15:14 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_string.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

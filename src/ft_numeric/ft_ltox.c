@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 09:29:11 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:23:24 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:13:11 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 ** this function.
 */
 
-#include <libft.h>
 #include <ft_numeric.h>
 
 char	*ft_ltox(long unsigned int dn, unsigned int font)

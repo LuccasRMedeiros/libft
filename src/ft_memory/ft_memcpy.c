@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 00:42:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:19:09 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:11:58 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_memory.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t cnt)

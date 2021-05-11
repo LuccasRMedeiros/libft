@@ -6,11 +6,13 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/10 17:44:59 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/11 17:02:38 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+MODULE = ft_string
 
 CC = gcc
 
@@ -20,13 +22,11 @@ ARCHV = ar -rcs
 
 MSG_DONE = echo "-- Done!\n"
 
-INCLUDES = ../../headers/
-
 SRC = $(notdir $(wildcard ./*.c))
 
 OBJ = $(SRC:%.c=%.o)
 
-OBJ_PATH = ../../out/ft_string
+OBJ_PATH = ../../out/$(MODULE)
 
 OBJ_FULL = $(addprefix $(OBJ_PATH)/,$(OBJ))
 
@@ -36,12 +36,12 @@ all: $(OBJ_PATH) $(OBJ_FULL)
 	@$(MSG_DONE)
 
 $(OBJ_PATH):
-	@echo "-- Creating ft_char objects directory"
+	@echo "-- Creating $(MODULE) objects directory"
 	@mkdir -p $(OBJ_PATH)
 
 $(OBJ_PATH)/%.o: ./%.c
 	@echo "-- Compiling $@"
-	@$(CC) $(FLAGS) -I $(INCLUDES) -o $@ -c $<
+	@$(CC) $(FLAGS) -I ../../headers/ -o $@ -c $<
 
 clean:
 	@echo "-- Removing ft_char objects"

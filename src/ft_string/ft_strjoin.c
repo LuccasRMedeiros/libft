@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 11:20:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:25:44 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:13:59 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_string.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)

@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 12:25:18 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:23:29 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:13:00 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_numeric.h>
 
 size_t	ft_intlen(intmax_t n)

@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 22:57:38 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:13:13 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:05:16 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_char.h>
 
 int	ft_tolower(int c)

@@ -6,11 +6,10 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:47:10 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:19:03 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:11:38 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <ft_memory.h>
 
 void	ft_bzero(void *s, size_t n)

@@ -6,12 +6,9 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:16:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:26:21 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/11 17:13:43 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <libft.h>
-#include <ft_string.h>
 
 /*
 ** First duplicate dst to a buffer, then free dst memmory and destroy it.
@@ -19,6 +16,8 @@
 ** copy the content of both temp and src, returning a pointer to the new	-
 ** address of dst.
 */
+
+#include <ft_string.h>
 
 static char	dstcpy(size_t i, size_t dst_len, char *temp, char const *src)
 {
