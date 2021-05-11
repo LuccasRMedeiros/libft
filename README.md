@@ -1,5 +1,6 @@
 <h1>42 LIBFT</h1>
 <br>
+<p>You is in "ft_printf" branch. This branch carries a simplified version of libft that is used in ft printf project (this one: https://github.com/LuccasRMedeiros/ft_printf). Note that even if ft printf is a part of the main libft now, the other repo still existing for reference for who need it.</p>
 <p>This repo is a library of functions made in C where most of them are replicas of standard libc, some are sugestions and others are my own idea</p>
 <p>As it is part of 42cursus the functions writing follows rules stabilished by the Norme V3 of École 42</p>
 <p>If you found this repo because you're also a 42 student (or a science computer student at all), feel free to look at this repo for your reference, but keep in mind that to be a good programmer you must be able to code your own functions</p>
