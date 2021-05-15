@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:12:13 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/11 17:07:05 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/15 12:38:15 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,24 @@ static char	*next_line(char *rf, char **line, int nbytes)
 	return (holder);
 }
 
-static int	error_catcher(int fd, long int bsz, char **line, char *buf)
+static int	error_catcher(int fd, char **line, char *buf)
 {
 	if (fd < 0 || fd > RLIMIT_NOFILE)
 		return (-1);
 	else if (!line)
-		return (-1);
-	else if (bsz <= 0)
 		return (-1);
 	else if (!buf)
 		return (-1);
 	return (0);
 }
 
-int	ft_gnl(int fd, char **line, long int bsz)
+int	ft_gnl(int fd, char **line)
 {
 	static char	*rf[FOPEN_MAX];
 	int			nread;
 	char		*buffer;
 
-	buffer = (char *)malloc(sizeof(char) * bsz + 1);
+	buffer = (char *)malloc(sizeof(char) * 10);
 	if (error_catcher(fd, bsz, line, buffer) < 0)
 		return (-1);
 	if (!rf[fd])
