@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 20:19:21 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:11:04 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/16 11:44:25 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 char	*ft_reallocncat(char *dst, char const *src);
 bool	ft_strhvchr(const char *string, int c);
+char	*ft_strcomb(int n_strs, ...);
 
 #endif
