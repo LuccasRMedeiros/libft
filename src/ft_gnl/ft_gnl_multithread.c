@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_gnl.c                                           :+:      :+:    :+:   */
+/*   ft_gnl_multithread.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:12:13 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/15 18:06:57 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/16 09:26:55 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_gnl.h>
+#include <libft.h>
 
 static int	read_file(int fd, char *buf, char **rf)
 {
@@ -69,18 +69,18 @@ static int	error_catcher(int fd, char **line, char *buf, char **rf)
 	return (nread);
 }
 
-int	ft_gnl(int fd, char **line)
+int	ft_gnl_multithread(int fd, char **line)
 {
-	static char	*rf;
+	static char	*rf[FOPEN_MAX];
 	int			nread;
 	char		*buffer;
 
 	buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
-	nread = error_catcher(fd, line, buffer, &rf);
+	nread = error_catcher(fd, line, buffer, &rf[fd]);
 	free(buffer);
 	if (nread < 0)
 		return (-1);
-	rf = next_line(rf, line, nread);
+	rf[fd] = next_line(rf[fd], line, nread);
 	if (!nread)
 		return (0);
 	return (1);
