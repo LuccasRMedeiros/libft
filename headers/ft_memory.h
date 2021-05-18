@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:16:12 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/07 20:27:56 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/17 22:28:32 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ void	*ft_memmove(void *dst, const void *src, size_t cnt);
 void	*ft_memchr(const void *dst, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 void	*ft_calloc(size_t n_itens, size_t size);
+void	ft_destroyer(void **del);
 
 #endif
