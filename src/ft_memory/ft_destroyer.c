@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 22:18:23 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/17 22:28:02 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/20 14:19:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 ** Destroy arrays and free them.
 ** Receives a pointer to pointer of void. It run through the indexes of the    -
 ** major pointer and nullifies the values. then free the major pointer.
-** The last data contained on the array must be null, otherwise the function   -
+** The last data contained on the array must be (null), otherwise the function -
 ** will segfault.
 */
 

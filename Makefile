@@ -6,13 +6,13 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/11 15:15:21 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/20 11:35:36 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = clang
 
 FLAGS = -Wall -Wextra -Werror
 

@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 20:19:21 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/16 11:44:25 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/20 14:18:35 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include "ft_memory.h"
 
 size_t	ft_strlen(const char *str);
+size_t	ft_strstrlen(const char **str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *str, int c);
