@@ -6,13 +6,11 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/20 11:35:36 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/05/21 18:56:25 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-CC = clang
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -20,7 +18,9 @@ ARCHV = ar -rcs
 
 MSG_DONE = echo "-- Done!\n"
 
-MAKE_EXT = make -C $(MODULE) all
+RULE = all
+
+MAKE_EXT = make --no-print-directory -C $(MODULE) $(RULE)
 
 INCLUDES = headers/
 
@@ -89,7 +89,7 @@ fclean: clean
 
 re: fclean all
 
-debug: FLAGS += -g
+debug: RULE = debug
 
 debug: re
 	@echo "-- Recreated objects with -g"
