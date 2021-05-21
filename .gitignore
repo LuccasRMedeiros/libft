@@ -5,5 +5,4 @@ main.c
 *.swo
 libftTester/
 out/
-.vscode/
 debugf
