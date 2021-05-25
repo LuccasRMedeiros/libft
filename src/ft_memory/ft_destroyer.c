@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 22:18:23 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/20 14:19:48 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/21 19:23:02 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_destroyer(void **del)
 	del_i = 0;
 	while (array[del_i] != NULL)
 	{
+		free(array[del_i]);
 		array[del_i] = NULL;
 		++del_i;
 	}
