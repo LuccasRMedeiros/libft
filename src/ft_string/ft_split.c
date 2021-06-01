@@ -6,18 +6,18 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/11 17:13:46 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/06/01 12:39:00 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_string.h>
 
-static void	ft_error(char **split, int len, size_t *wise)
+static void	error(char **split, int len, size_t *wise)
 {
 	while (len >= 0)
 	{
 		free(split[len]);
-		len--;
+		--len;
 	}
 	free(wise);
 	free(split);

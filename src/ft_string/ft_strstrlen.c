@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 22:34:39 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/20 14:18:04 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/30 11:04:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include <ft_string.h>
 
-size_t	ft_strstrlen(const char **str)
+size_t	ft_strstrlen(char **str)
 {
 	size_t	len;
 
