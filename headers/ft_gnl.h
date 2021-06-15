@@ -6,12 +6,12 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:12:34 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/15 18:30:49 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/05/20 18:09:19 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef FT_GNL_H
+# define FT_GNL_H
 
 # include "libft.h"
 

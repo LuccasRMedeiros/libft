@@ -22,10 +22,8 @@ char	*ft_strchr(const char *str, int c)
 	while (str[i] != find)
 	{
 		if (str[i] == '\0' && find != '\0')
-		{
 			return (NULL);
-		}
-		i++;
+		++i;
 	}
 	return ((char *)str + i);
 }
