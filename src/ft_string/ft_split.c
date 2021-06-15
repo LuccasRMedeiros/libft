@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 01:19:29 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/06/01 12:39:00 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/06/15 11:28:48 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char	**ft_split(char const *str, char c)
 		split[i] = ft_substr(str, dl[i + i], (dl[i + i + 1] - dl[i + i]));
 		if (!(split[i]))
 		{
-			ft_error(split, i, dl);
+			error(split, i, dl);
 			return (NULL);
 		}
 		i++;
