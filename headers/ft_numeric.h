@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:23:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/10 13:11:04 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/07/30 18:23:54 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_ltox(long unsigned int dn, unsigned int font);
 size_t	ft_intlen(intmax_t n);
 size_t	ft_uintlen(uintmax_t n);
 size_t	ft_hexlen(uintmax_t dn);
+int     ft_igreater(int int1, int int2);
 
 #endif
