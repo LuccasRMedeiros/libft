@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:09:00 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/14 22:48:53 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/09/15 18:17:45 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 # define P_SPECS "cspdiuxX%"
 # define S_NUM "diuxX"
 # define S_ALP "csp%"
+# define LOW 87
+# define UPR 55
 
 typedef struct s_fspec
 {

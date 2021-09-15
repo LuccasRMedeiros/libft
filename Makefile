@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/09/15 09:54:31 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/09/15 18:23:21 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror -g
 
-CC = clang
+CC = gcc
 
 ARCHV = ar -rcs
 
@@ -95,7 +95,7 @@ SRC =	./ft_atoi.c \
 OBJ = $(SRC:%.c=%.o)
 
 %.o: %.c
-	$(CC) $(FLAGS) -o $@ $<
+	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(ARCHV) $(NAME) $(OBJ)
@@ -103,7 +103,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJ_PATH)
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

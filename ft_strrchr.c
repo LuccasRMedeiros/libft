@@ -6,11 +6,11 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 10:46:59 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/11 17:15:49 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/09/15 18:20:44 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)
 {
