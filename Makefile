@@ -6,13 +6,15 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/05/21 18:56:25 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/09/15 09:54:31 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
+
+CC = clang
 
 ARCHV = ar -rcs
 
@@ -22,77 +24,90 @@ RULE = all
 
 MAKE_EXT = make --no-print-directory -C $(MODULE) $(RULE)
 
-INCLUDES = headers/
+SRC =	./ft_atoi.c \
+		./ft_bzero.c \
+		./ft_calloc.c \
+		./ft_destroyer.c \
+		./ft_dtox.c \
+		./ft_fprintf.c \
+		./ft_fprintf/pf_delfspec.c \
+		./ft_fprintf/pf_newfspec.c \
+		./ft_fprintf/pf_numparser.c \
+		./ft_fprintf/pf_refine_long_weights.c \
+		./ft_fprintf/pf_refine_weights.c \
+		./ft_fprintf/pf_settype.c \
+		./ft_fprintf/pf_textformat.c \
+		./ft_fprintf/pf_txtparser.c \
+		./ft_gnl.c \
+		./ft_gnl_multithread.c \
+		./ft_hexlen.c \
+		./ft_igreater.c \
+		./ft_intlen.c \
+		./ft_isalnum.c \
+		./ft_isalpha.c \
+		./ft_isascii.c \
+		./ft_isdigit.c \
+		./ft_isprint.c \
+		./ft_itoa.c \
+		./ft_lstadd_back.c \
+		./ft_lstadd_front.c \
+		./ft_lstclear.c \
+		./ft_lstdelone.c \
+		./ft_lstiter.c \
+		./ft_lstlast.c \
+		./ft_lstmap.c \
+		./ft_lstnew.c \
+		./ft_lstsize.c \
+		./ft_ltoa.c \
+		./ft_ltox.c \
+		./ft_memccpy.c \
+		./ft_memchr.c \
+		./ft_memcmp.c \
+		./ft_memcpy.c \
+		./ft_memmove.c \
+		./ft_memset.c \
+		./ft_putchar_fd.c \
+		./ft_putendl_fd.c \
+		./ft_putnbr_fd.c \
+		./ft_putstr_fd.c \
+		./ft_reallocncat.c \
+		./ft_split.c \
+		./ft_strchr.c \
+		./ft_strcomb.c \
+		./ft_strdup.c \
+		./ft_strhvchr.c \
+		./ft_strjoin.c \
+		./ft_strlcat.c \
+		./ft_strlcpy.c \
+		./ft_strlen.c \
+		./ft_strmapi.c \
+		./ft_strncmp.c \
+		./ft_strnstr.c \
+		./ft_strrchr.c \
+		./ft_strstrlen.c \
+		./ft_strtrim.c \
+		./ft_substr.c \
+		./ft_tolower.c \
+		./ft_toupper.c \
+		./ft_uintlen.c \
+		./ft_utoa.c \
 
-SRC_PATH = ./src
+OBJ = $(SRC:%.c=%.o)
 
-OBJ_PATH = ./out
+%.o: %.c
+	$(CC) $(FLAGS) -o $@ $<
 
-$(NAME): $(OBJ_PATH) char fprintf gnl list memory numeric string write
-
-$(OBJ_PATH):
-	@echo "-- Creating objects main directory"
-	@mkdir -p $(OBJ_PATH)
+$(NAME): $(OBJ)
+	$(ARCHV) $(NAME) $(OBJ)
 
 all: $(NAME)
 
-char:	MODULE = $(SRC_PATH)/ft_char
-
-char: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
-fprintf:	MODULE = $(SRC_PATH)/ft_fprintf
-
-fprintf: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
-gnl:	MODULE = $(SRC_PATH)/ft_gnl
-
-gnl: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
-list:	MODULE = $(SRC_PATH)/ft_list
-
-list: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
-memory:	MODULE = $(SRC_PATH)/ft_memory
-
-memory: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
-numeric:	MODULE = $(SRC_PATH)/ft_numeric
-
-numeric: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
-string:	MODULE = $(SRC_PATH)/ft_string
-
-string: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
-write:	MODULE = $(SRC_PATH)/ft_write
-
-write: $(OBJ_PATH)
-	@$(MAKE_EXT)
-
 clean:
-	@echo "-- Removing objects of libft"
-	@rm -rf $(OBJ_PATH)
-	@$(MSG_DONE)
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
-	@echo "-- Removing everything of libft"
-	@echo "NOTE: source code will be preserved"
-	@rm -f $(NAME)
-	@$(MSG_DONE)
+	rm -f $(NAME)
 
 re: fclean all
 
-debug: RULE = debug
-
-debug: re
-	@echo "-- Recreated objects with -g"
-	@$(MSG_DONE)
-
-.PHONY: all clean debug fclean re
+.PHONY: all clean fclean re
