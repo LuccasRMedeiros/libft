@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 17:22:03 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/15 18:13:20 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/10/28 12:01:11 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ t_fspec	*pf_newfspec(void)
 	new = malloc(sizeof *new);
 	if (!new)
 		return (NULL);
-	new->init = true;
+	new->init = 1;
 	new->fs = '\0';
 	new->w = 0;
-	new->p = false;
+	new->p = 0;
 	new->l = 0;
 	new->s = '\0';
 	new->dt = NULL;

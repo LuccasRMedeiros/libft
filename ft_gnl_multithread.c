@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:12:13 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/16 09:26:55 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/10/28 12:14:21 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	error_catcher(int fd, char **line, char *buf, char **rf)
 {
 	int	nread;
 
-	if (fd < 0 || fd > RLIMIT_NOFILE)
+	if (fd < 0 || fd > 65535)
 		return (-1);
 	else if (!line)
 		return (-1);

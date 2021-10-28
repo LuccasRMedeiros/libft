@@ -6,20 +6,20 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/11 17:12:46 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/10/28 11:54:03 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	ignorable(char c)
+static int	ignorable(char c)
 {
 	char	*space_list;
 
 	space_list = " \t\r\n\v\f";
-	if (ft_strhvchr(space_list, c))
-		return (true);
-	return (false);
+	if (ft_strchr(space_list, c))
+		return (1);
+	return (0);
 }
 
 static long int	calc_am(long int am, int sig, char c)

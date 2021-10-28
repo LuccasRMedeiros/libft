@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/09/15 18:23:21 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/10/28 12:16:37 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,6 @@ SRC =	./ft_atoi.c \
 		./ft_strchr.c \
 		./ft_strcomb.c \
 		./ft_strdup.c \
-		./ft_strhvchr.c \
 		./ft_strjoin.c \
 		./ft_strlcat.c \
 		./ft_strlcpy.c \

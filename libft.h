@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/15 18:20:12 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/10/28 12:16:14 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <fcntl.h>
-# include <limits.h>
+# include <stdio.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include <stdint.h>
-# include <stdio.h>
-# include <stdbool.h>
-# include <sys/param.h>
-# include <sys/resource.h>
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
@@ -47,9 +41,9 @@ char	*ft_dtox(unsigned int dn, unsigned int font);
 int		ft_fprintf(int fd, const char *str, ...);
 int		ft_gnl(int fd, char **line);
 int		ft_gnl_multithread(int fd, char **line);
-size_t	ft_hexlen(uintmax_t dn);
+size_t	ft_hexlen(unsigned int dn);
 int 	ft_igreater(int int1, int int2);
-size_t	ft_intlen(intmax_t n);
+size_t	ft_intlen(int n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -82,7 +76,6 @@ char	**ft_split(char const *str, char c);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strcomb(int n_strs, ...);
 char	*ft_strdup(const char *str);
-bool	ft_strhvchr(const char *string, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
@@ -96,7 +89,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_tolower(int c);
-size_t	ft_uintlen(uintmax_t n);
+size_t	ft_uintlen(unsigned int n);
 char	*ft_utoa(unsigned int un);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 18:09:00 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/15 18:17:45 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/10/28 12:00:07 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@
 
 typedef struct s_fspec
 {
-	bool	init;
+	int		init;
 	char	fs;
 	size_t	w;
-	bool	p;
+	int		p;
 	size_t	l;
 	char	s;
 	char	*dt;
@@ -51,7 +51,6 @@ typedef struct s_fspec
 }				t_fspec;
 
 int		ft_fprintf(int fd, const char *str, ...);
-bool	pf_error(const char *str);
 char	*pf_txtparser(t_fspec *tp, va_list args);
 char	*pf_numparser(t_fspec *tp, va_list args);
 void	pf_refine_weights(t_fspec *tp, va_list args);

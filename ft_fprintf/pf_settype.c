@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 12:03:41 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/15 18:13:20 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/10/28 12:08:22 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	wildcard(t_fspec *ret, int arg)
 		if (ret->l > 0 || arg < 0)
 		{
 			ret->l = 0;
-			ret->p = false;
+			ret->p = 0;
 		}
 		else
 			ret->l = arg;
@@ -62,9 +62,9 @@ static char	*atoi_thn_adv(t_fspec *ret, const char *str)
 
 static char	*parser(t_fspec *tp, va_list args)
 {
-	if (ft_strhvchr(S_NUM, tp->s))
+	if (ft_strchr(S_NUM, tp->s))
 		return (pf_numparser(tp, args));
-	else if (ft_strhvchr(S_ALP, tp->s))
+	else if (ft_strchr(S_ALP, tp->s))
 		return (pf_txtparser(tp, args));
 	return (NULL);
 }
@@ -79,17 +79,17 @@ t_fspec	*pf_settype(const char *str, va_list args)
 	while (*str && ++str && ret->init)
 	{
 		str_c = *str;
-		if (ft_strhvchr(P_FLAGS, str_c) && !(ret->fs == '-'))
+		if (ft_strchr(P_FLAGS, str_c) && !(ret->fs == '-'))
 			ret->fs = str_c;
 		else if (str_c == '*')
 			wildcard(ret, va_arg(args, int));
 		else if (str_c == '.')
-			ret->p = true;
-		else if (ft_strhvchr(P_SIZES, str_c))
+			ret->p = 1;
+		else if (ft_strchr(P_SIZES, str_c))
 			str = atoi_thn_adv(ret, str);
-		else if (ft_strhvchr(P_SPECS, str_c))
+		else if (ft_strchr(P_SPECS, str_c))
 		{
-			ret->init = false;
+			ret->init = 0;
 			ret->s = str_c;
 		}
 	}
