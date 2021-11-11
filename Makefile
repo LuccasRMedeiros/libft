@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/10/28 12:16:37 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/11/11 00:36:01 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,13 @@ SRC =	./ft_atoi.c \
 		./ft_bzero.c \
 		./ft_calloc.c \
 		./ft_destroyer.c \
+		./ft_dlstadd.c \
+		./ft_dlstadd_circle.c \
+		./ft_dlstcircle.c \
+		./ft_dlstclear.c \
+		./ft_dlstclear_circle.c \
+		./ft_dlstinsert.c \
+		./ft_dlstnew.c \
 		./ft_dtox.c \
 		./ft_fprintf.c \
 		./ft_fprintf/pf_delfspec.c \
@@ -41,7 +48,6 @@ SRC =	./ft_atoi.c \
 		./ft_gnl.c \
 		./ft_gnl_multithread.c \
 		./ft_hexlen.c \
-		./ft_igreater.c \
 		./ft_intlen.c \
 		./ft_isalnum.c \
 		./ft_isalpha.c \
@@ -52,6 +58,8 @@ SRC =	./ft_atoi.c \
 		./ft_lstadd_back.c \
 		./ft_lstadd_front.c \
 		./ft_lstclear.c \
+		./ft_lstclear_circle.c \
+		./ft_lstcircle.c \
 		./ft_lstdelone.c \
 		./ft_lstiter.c \
 		./ft_lstlast.c \

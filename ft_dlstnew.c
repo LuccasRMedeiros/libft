@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_dlistnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 13:00:39 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/05 11:32:17 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/11/06 15:43:52 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/11/06 15:58:51 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Return the last node of the list.
+** Create a new double linked list.
 */
 
-t_list	*ft_lstlast(t_list *lst)
+t_dlist	*ft_dlstnew(void *content)
 {
-	if (!lst)
+	t_dlist	*new;
+
+	new = malloc(sizeof(*new));
+	if (!new)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	new->content = content;
+	new->prev = NULL;
+	new->next = NULL;
+	return (new);
 }

@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear_circle.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 11:49:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/05 13:24:21 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/03/23 12:04:30 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/11/11 00:49:11 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+/*
+** Clear a circled linked list.
+*/
+
+void	ft_lstclear_circle(t_list **lst_del, void (*del)(void *))
 {
-	if (lst == NULL)
+	t_list	*head;
+	t_list	*holder;
+
+	if (*lst_del == NULL)
 		return ;
-	del(lst->content);
-	free(lst);
-	lst = NULL;
+	head = *lst_del;
+	while (*lst_del != head)
+	{
+		holder = (*lst_del)->next;
+		del((*lst_del)->content);
+		free(*lst_del);
+		*lst_del = holder;
+	}
+	lst_del = NULL;
 }

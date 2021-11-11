@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstcircle_size.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 13:00:39 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/05 11:32:17 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/11/06 16:01:30 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/11/06 16:08:44 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Return the last node of the list.
+** Iterate through a circle linked list.
 */
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_lstcircle_size(t_list *list)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	unsigned int	head;
+	int				n;
+
+	head = *list;
+	n = 0;
+	while ((unsigned int)*list != head)
+	{
+		list = list->next;
+		++n;
+	}
+	return (n);
 }

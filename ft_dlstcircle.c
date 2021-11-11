@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_igreater.c                                      :+:      :+:    :+:   */
+/*   ft_dlstcircle.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 18:19:08 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/07/31 13:30:41 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/11/08 20:50:15 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/11/11 00:29:09 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Compare two integer and return the greater.
+** Make a circled double linked list.
 */
 
-int ft_igreater(int int1, int int2)
+t_dlist	*ft_dlstcircle(t_dlist *d_list)
 {
-    if (int1 > int2)
-        return (int1);
-    return (int2);
+	t_dlist	*head;
+
+	while (d_list->prev)
+		d_list = d_list->prev;
+	head = d_list;
+	while (d_list->next)
+		d_list = d_list->next;
+	head->prev = d_list;
+	d_list->next = head;
+	return (d_list);
 }

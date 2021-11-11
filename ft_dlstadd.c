@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_dlstadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 11:49:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/05 13:24:21 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/11/08 20:40:15 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/11/10 23:42:53 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+/*
+** Add a new item to the of a double linked list.
+**
+** NOTE: Don't use with circled lists. Use ft_dlstadd_circle instead.
+*/
+
+void	ft_dlstadd(void *content, t_dlist **d_list)
 {
-	if (lst == NULL)
-		return ;
-	del(lst->content);
-	free(lst);
-	lst = NULL;
+	t_dlist	*add;
+
+	add = ft_dlstnew(content);
+	while ((*d_list)->next)
+		*d_list = (*d_list)->next;
+	add->prev = *d_list;
+	(*d_list)->next = add;
 }

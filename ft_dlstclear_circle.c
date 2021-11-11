@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_dlstclear_circle.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 11:49:35 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/05 13:24:21 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/11/08 23:53:32 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/11/11 00:46:30 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+/*
+** Clear a cicle double linked list.
+*/
+
+void	ft_dlstclear_circle(t_dlist **dcl_del, void(*del)(void *))
 {
-	if (lst == NULL)
+	t_dlist	*head;
+	t_dlist	*holder;
+
+	if (!*dcl_del)
 		return ;
-	del(lst->content);
-	free(lst);
-	lst = NULL;
+	head = *dcl_del;
+	while (*dcl_del != head)
+	{
+		holder = (*dcl_del)->next;
+		del((*dcl_del)->content);
+		free(*dcl_del);
+		*dcl_del = holder;
+	}
+	*dcl_del = NULL;
 }
