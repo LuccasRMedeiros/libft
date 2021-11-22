@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:01:05 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/22 20:34:49 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/11/22 20:38:25 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ t_dlist	*ft_dlstpop_circle(t_dlist *dlst)
 	next->prev = prev;
 	free(dlst);
 	dlst = next;
+	return (dlst);
 }
