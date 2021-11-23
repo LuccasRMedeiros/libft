@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstcircle.c                                    :+:      :+:    :+:   */
+/*   ft_dlstfirst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 20:50:15 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/22 23:43:48 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/03/06 13:00:39 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/11/22 23:45:15 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Make a circled double linked list.
+** Return the last node of the list.
 */
 
-t_dlist	*ft_dlstcircle(t_dlist *dlst)
+t_dlist	*ft_dlstfirst(t_dlist *dlst)
 {
-	t_dlist	*tail;
-
-	tail = ft_dlstlast(dlst);
-	tail->next = dlst;
-	dlst->prev = tail;
+	if (!dlst)
+		return (NULL);
+	while (dlst->prev)
+		dlst = dlst->prev;
 	return (dlst);
 }

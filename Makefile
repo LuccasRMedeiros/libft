@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
+#    By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/11/22 23:23:09 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/11/22 23:47:09 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC =	./ft_atoi.c \
 		./ft_dlstclear.c \
 		./ft_dlstclear_circle.c \
 		./ft_dlstdelone_circle.c \
+		./ft_dlstfirst.c \
 		./ft_dlstinsert.c \
 		./ft_dlstlast.c \
 		./ft_dlstnew.c \
