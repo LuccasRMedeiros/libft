@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/22 21:07:16 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/11/22 23:35:52 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,6 +163,7 @@ void	ft_dlstclear(t_dlist **dlst_del, void(*del)(void *));
 void	ft_dlstclear_circle(t_dlist **dcl_del, void(*del)(void *));
 t_dlist	*ft_dlstdelone_circle(t_dlist *d_list, void(*del)(void *));
 void	ft_dlstinsert(void *content, t_dlist *d_list);
+t_dlist	*ft_dlstlast(t_dlist *dlst);
 t_dlist	*ft_dlstnew(void *content);
 t_dlist	*ft_dlstpop_circle(t_dlist *dlst);
 

@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/11/22 20:30:41 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/11/22 23:23:09 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC =	./ft_atoi.c \
 		./ft_dlstclear_circle.c \
 		./ft_dlstdelone_circle.c \
 		./ft_dlstinsert.c \
+		./ft_dlstlast.c \
 		./ft_dlstnew.c \
 		./ft_dlstpop_circle.c \
 		./ft_dtox.c \
@@ -112,7 +113,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf *.o
 
 fclean: clean
 	rm -f $(NAME)
