@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstpop_circle.c                                :+:      :+:    :+:   */
+/*   ft_dlstsize_circle.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 14:01:05 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/12/02 13:36:37 by lrocigno         ###   ########.fr       */
+/*   Created: 2021/12/05 19:49:49 by lrocigno          #+#    #+#             */
+/*   Updated: 2021/12/05 20:16:22 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Remove one node from the list and closes the circle again.
+** Iterate through a double circled linked list and return the number of items.
 */
 
-t_dlist	*ft_dlstpop_circle(t_dlist *dlst)
+int	ft_dlstsize_circle(t_dlist *dlst)
 {
-	t_dlist	*next;
-	t_dlist	*prev;
+	t_dlist	*aux;
+	t_dlist	*tail;
+	int		cnt;
 
-	next = dlst->next;
-	if (dlst == next)
+	tail = dlst->prev;
+	cnt = 0;
+	while (dlst != tail)
 	{
-		dlst->content = NULL;
-		return (dlst);
+		++cnt;
+		aux = aux->next;
 	}
-	prev = dlst->prev;
-	prev->next = next;
-	next->prev = prev;
-	free(dlst);
-	dlst = NULL;
-	return (next);
+	++cnt;
+	return (cnt);
 }

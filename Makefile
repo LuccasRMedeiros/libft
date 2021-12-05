@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/11/22 23:47:09 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/12/05 20:16:22 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC =	./ft_atoi.c \
 		./ft_dlstlast.c \
 		./ft_dlstnew.c \
 		./ft_dlstpop_circle.c \
+		./ft_dlstsize_circle.c \
 		./ft_dtox.c \
 		./ft_fprintf.c \
 		./ft_fprintf/pf_delfspec.c \
