@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 13:29:14 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/12/05 20:16:21 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/12/06 12:11:26 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+/*
+** Macro for limits.
+*/
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+# define LONG_MAX 9223372036854775807
+# define LONG_MIN -9223372036854775808
 
 /*
 ** Linked list.

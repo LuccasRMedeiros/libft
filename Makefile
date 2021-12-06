@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/12/05 20:16:22 by lrocigno         ###   ########.fr        #
+#    Updated: 2021/12/06 12:12:16 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ RULE = all
 MAKE_EXT = make --no-print-directory -C $(MODULE) $(RULE)
 
 SRC =	./ft_atoi.c \
+		./ft_atol.c \
 		./ft_bzero.c \
 		./ft_calloc.c \
 		./ft_destroyer.c \

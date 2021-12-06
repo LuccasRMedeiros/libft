@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 15:53:47 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/12/06 12:11:26 by lrocigno         ###   ########.fr       */
+/*   Updated: 2021/12/06 12:11:24 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static int	ignorable(char c)
 	return (0);
 }
 
-static long int	calc_am(long int am, int sig, char c)
+static long long int	calc_am(long long int am, int sig, char c)
 {
 	am = (am * 10) + (c - 48);
-	if (am > INT_MAX)
+	if (am > LONG_MAX)
 	{
 		if (sig < 0)
 			return (0);
@@ -34,10 +34,10 @@ static long int	calc_am(long int am, int sig, char c)
 	return (am);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atol(const char *str)
 {
-	long int	am;
-	int			sig;
+	long long int	am;
+	int				sig;
 
 	am = 0;
 	sig = 1;
