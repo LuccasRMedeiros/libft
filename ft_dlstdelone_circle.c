@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 10:22:36 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/11 13:54:08 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:18:37 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** each other and return the next node.
 */
 
-t_dlist	*ft_dlstdelone_circle(t_dlist *d_list, void(*del)(void *))
+t_dlist	*ft_dlstdelone_circle(t_dlist *d_list, void (*del)(void *))
 {
 	t_dlist	*prev;
 	t_dlist	*next;

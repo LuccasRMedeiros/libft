@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/14 22:58:22 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:20:32 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_utoa(unsigned int un)
 	char		*utoa;
 
 	un_sz = ft_intlen(un);
-	utoa = ft_calloc(un_sz + 1, sizeof *utoa);
+	utoa = ft_calloc(un_sz + 1, sizeof(*utoa));
 	if (!utoa)
 		return (NULL);
 	while (un_sz)

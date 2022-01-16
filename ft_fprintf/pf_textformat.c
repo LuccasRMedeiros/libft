@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 22:25:43 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/15 18:13:20 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:25:30 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*alignleft(size_t wd, size_t sz, char *dt)
 {
 	char	*ret;
 
-	ret = ft_calloc(wd + 1, sizeof *ret);
+	ret = ft_calloc(wd + 1, sizeof(*ret));
 	if (!ret)
 		return (NULL);
 	while (wd > 0)
@@ -47,7 +47,7 @@ static char	*alignright(size_t wd, size_t sz, char *dt)
 {
 	char	*ret;
 
-	ret = ft_calloc(wd + 1, sizeof *ret);
+	ret = ft_calloc(wd + 1, sizeof(*ret));
 	if (!ret)
 		return (NULL);
 	while (wd > 0)

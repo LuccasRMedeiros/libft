@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/11 17:13:07 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:20:14 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_ltoa(long int ln)
 	t_sz = ln_sz;
 	if (ln < 0)
 		++t_sz;
-	ltoa = ft_calloc(t_sz + 1, sizeof *ltoa);
+	ltoa = ft_calloc(t_sz + 1, sizeof(*ltoa));
 	if (!ltoa)
 		return (NULL);
 	while (ln_sz)

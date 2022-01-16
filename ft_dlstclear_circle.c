@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 23:53:32 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/23 12:53:21 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:18:27 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Clear a cicle double linked list.
 */
 
-void	ft_dlstclear_circle(t_dlist **dcl_del, void(*del)(void *))
+void	ft_dlstclear_circle(t_dlist **dcl_del, void (*del)(void *))
 {
 	t_dlist	*aux;
 	t_dlist	*head;

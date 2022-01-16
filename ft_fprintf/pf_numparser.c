@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 21:38:37 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/09/15 18:13:20 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:25:13 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*pf_numparser(t_fspec *tp, va_list args)
 {
 	char	*ret;
 
-	ret = ft_calloc(tp->sz + 1, sizeof *ret);
+	ret = ft_calloc(tp->sz + 1, sizeof(*ret));
 	if (!ret)
 		return (NULL);
 	if (tp->s == 'd' || tp->s == 'i')

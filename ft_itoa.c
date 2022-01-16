@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 09:41:40 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/11 17:13:04 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:19:39 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 	t_sz = n_sz;
 	if (n < 0)
 		++t_sz;
-	itoa = ft_calloc(t_sz + 1, sizeof *itoa);
+	itoa = ft_calloc(t_sz + 1, sizeof(*itoa));
 	if (!itoa)
 		return (NULL);
 	while (n_sz)

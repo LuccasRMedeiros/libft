@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 23:20:56 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/11/11 00:38:20 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:18:01 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Clear a double linked list.
 */
 
-void	ft_dlstclear(t_dlist **dlst_del, void(*del)(void *))
+void	ft_dlstclear(t_dlist **dlst_del, void (*del)(void *))
 {
 	t_dlist	*holder;
 

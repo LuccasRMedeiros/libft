@@ -6,7 +6,7 @@
 /*   By: lrocigno <lrocigno@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 10:52:37 by lrocigno          #+#    #+#             */
-/*   Updated: 2021/05/11 17:15:14 by lrocigno         ###   ########.fr       */
+/*   Updated: 2022/01/16 12:20:24 by lrocigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	alloc -= start;
 	if (alloc > len)
 		alloc = len;
-	sub = ft_calloc(alloc + 1, sizeof *sub);
+	sub = ft_calloc(alloc + 1, sizeof(*sub));
 	if (!sub || !s)
 		return (NULL);
 	s += start;

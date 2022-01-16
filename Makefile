@@ -6,7 +6,7 @@
 #    By: lrocigno <lrocigno@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 12:00:43 by lrocigno          #+#    #+#              #
-#    Updated: 2021/12/06 12:12:16 by lrocigno         ###   ########.fr        #
+#    Updated: 2022/01/16 12:23:06 by lrocigno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,7 +116,7 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	rm -rf *.o
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
